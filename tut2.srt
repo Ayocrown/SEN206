@@ -1,0 +1,2970 @@
+1
+00:00:00,000 --> 00:00:06,570
+Hi, everyone, welcome. In this video we are 
+going to learn about Git and GitHub, why they are  
+
+2
+00:00:06,570 --> 00:00:12,540
+important and also how to use them. So we're going 
+to start off going over the terms and concepts  
+
+3
+00:00:12,540 --> 00:00:19,770
+that you will use in git, and the ecosystem 
+and then get into practical applications. This  
+
+4
+00:00:19,770 --> 00:00:28,200
+tutorial will include everything from basic Git 
+repositories, to what is GitHub, to some more  
+
+5
+00:00:28,200 --> 00:00:34,080
+intermediate concepts like branching and merging 
+and forking and that kind of stuff. I want to  
+
+6
+00:00:34,080 --> 00:00:40,380
+quickly introduce myself, my name is Gwen. And 
+I run a YouTube channel called Faraday Academy,  
+
+7
+00:00:40,380 --> 00:00:47,220
+where I upload coding tutorial videos. And 
+I also do a couple of live streams a week,  
+
+8
+00:00:47,220 --> 00:00:55,530
+mostly on Python and JavaScript topics, as well 
+as some more general purpose coding videos. You  
+
+9
+00:00:55,530 --> 00:01:02,760
+can also find me on Twitter, and Instagram and 
+pretty much everywhere by typing in Gwen Faraday.  
+
+10
+00:01:02,760 --> 00:01:13,210
+And let's get started with the tutorial. I want 
+to start off here by defining what Git is. Git is  
+
+11
+00:01:13,210 --> 00:01:20,560
+what we call a version control system that is free 
+and open source. And it's the most widely used  
+
+12
+00:01:20,560 --> 00:01:27,250
+version control system in development. Today, most 
+programmers interact with Git on a daily basis.  
+
+13
+00:01:27,250 --> 00:01:36,520
+So what is version control? version control is 
+basically a way that we as programmers track our  
+
+14
+00:01:36,520 --> 00:01:44,530
+code changes, we basically save an initial version 
+of our code into Git. And then when we update  
+
+15
+00:01:44,530 --> 00:01:52,300
+code, we can save it into Git again, and again and 
+again and again. And throughout time as our code  
+
+16
+00:01:52,300 --> 00:01:58,210
+continues to change, we can look back at all of 
+the changes we have made over time. This helps us  
+
+17
+00:01:58,210 --> 00:02:06,370
+to see and understand what we did when, as well as 
+track down bugs, or go back to a previous version  
+
+18
+00:02:06,370 --> 00:02:12,340
+of the code if we need to. So let's look at some 
+of the terms that you're going to see in this  
+
+19
+00:02:12,340 --> 00:02:19,120
+video. First of all, I use the term directory, 
+which is also known as a folder on your computer.  
+
+20
+00:02:19,120 --> 00:02:24,940
+When I reference the terminal or command line, I 
+basically mean an application that runs on your  
+
+21
+00:02:24,940 --> 00:02:31,900
+computer, which is just an interface where you 
+can type in text commands, you can navigate around  
+
+22
+00:02:31,900 --> 00:02:40,540
+files and folders, create files, change update 
+things, install and run programs, and much more.  
+
+23
+00:02:40,540 --> 00:02:48,040
+You might also hear me use the term COI, which 
+is just the command line interface. Many programs  
+
+24
+00:02:48,040 --> 00:02:54,970
+that you install, as a programmer will require 
+you to interact with them via text commands in  
+
+25
+00:02:54,970 --> 00:03:01,030
+the command line. So you will be typing out 
+some text and hitting Enter instead of say  
+
+26
+00:03:01,030 --> 00:03:07,750
+double clicking on a folder icon on your desktop. 
+Just think of it as another way to run a program.  
+
+27
+00:03:07,750 --> 00:03:13,870
+Now you might be wondering, why are we going to 
+use the terminal or command line instead of using  
+
+28
+00:03:13,870 --> 00:03:21,550
+one of these beautiful applications that handle 
+interacting with get for us? Well, as programmers,  
+
+29
+00:03:21,550 --> 00:03:27,520
+it's always good to use the terminal. So you learn 
+the Git commands in workflow of Git as well as  
+
+30
+00:03:27,520 --> 00:03:33,130
+become accustomed to it. As a developer, you are 
+going to be using the terminal a lot to install,  
+
+31
+00:03:33,130 --> 00:03:38,440
+see allies run programs, search for things, 
+etc. Throughout your development career. And  
+
+32
+00:03:38,440 --> 00:03:45,130
+learning Git is a great way to get started with 
+the command line. CD stands for change directory,  
+
+33
+00:03:45,130 --> 00:03:52,150
+it's basically the same thing as when you double 
+click on a folder using the icons on your desktop.  
+
+34
+00:03:52,150 --> 00:03:58,420
+While in the command line, if you want to move 
+into a folder, or even up to a parent folder,  
+
+35
+00:03:58,420 --> 00:04:04,780
+you'll use CD, followed by the directions 
+to get to whatever folder on your system  
+
+36
+00:04:04,780 --> 00:04:11,260
+you want to get to. A code editor, of course 
+is a place to write code. You'll probably see  
+
+37
+00:04:11,260 --> 00:04:16,540
+this in a lot of different programming videos. 
+But just in case you are unfamiliar with it,  
+
+38
+00:04:16,540 --> 00:04:23,050
+you can write code anywhere in a text document, 
+word processor anything. But there are special  
+
+39
+00:04:23,050 --> 00:04:28,750
+ones that are designed with lots of tools and 
+features for programmers. And these are called  
+
+40
+00:04:28,750 --> 00:04:35,770
+code editors. Now some people get confused by the 
+word repository because it has multiple meanings.  
+
+41
+00:04:35,770 --> 00:04:43,570
+But in the world of programming, it usually refers 
+to a git repository, which is basically just your  
+
+42
+00:04:43,570 --> 00:04:50,890
+project or the folder place where your project 
+is kept. You can call it a repository. People  
+
+43
+00:04:50,890 --> 00:04:58,300
+also sometimes confuse Git and GitHub. Now Git 
+is the tool that tracks the changes in your code  
+
+44
+00:04:58,300 --> 00:05:08,410
+over time. GitHub is a website where you host all 
+of your Git repositories. Being online, it makes  
+
+45
+00:05:08,410 --> 00:05:16,780
+it easy to work in groups with other people, and 
+organize your projects into a portfolio for you to  
+
+46
+00:05:16,780 --> 00:05:22,540
+show potential employers. So here are some of the 
+Git commands, we're going to cover in this video,  
+
+47
+00:05:22,540 --> 00:05:28,660
+which you will be typing into your terminal or 
+command line on your computer. They are clone,  
+
+48
+00:05:28,660 --> 00:05:35,770
+for example, if there's a repository that is not 
+on your local machine, but it's on GitHub, and you  
+
+49
+00:05:35,770 --> 00:05:41,050
+want to bring it down on your local machine, so 
+you can use it locally, you use the clone command.  
+
+50
+00:05:41,050 --> 00:05:47,080
+By the way, all of these commands are lowercase, 
+not uppercase, as we're going to see, as we go  
+
+51
+00:05:47,080 --> 00:05:53,410
+through the examples in this video, when you have 
+updated files, or created or deleted files and  
+
+52
+00:05:53,410 --> 00:05:59,260
+folders, you're going to want to tell get that you 
+made changes and that you would like Git to track  
+
+53
+00:05:59,260 --> 00:06:05,710
+those changes. So you use the Add command for 
+that. As I said earlier, Git is there for you to  
+
+54
+00:06:05,710 --> 00:06:12,910
+save the changes you make in your code. So you do 
+that through a commit, and we call it committing  
+
+55
+00:06:12,910 --> 00:06:19,270
+your changes. Once you have made changes locally 
+on your computer, and you're ready to put them in  
+
+56
+00:06:19,270 --> 00:06:25,180
+git, you tell Git to track them through the Add 
+command, you save your files to get through the  
+
+57
+00:06:25,180 --> 00:06:32,140
+commit command. And then you upload your files 
+to a place like GitHub, or another what we call  
+
+58
+00:06:32,140 --> 00:06:38,230
+remote repository, or GitHub alternative, like 
+Bitbucket, get lab, and there's many of them,  
+
+59
+00:06:38,230 --> 00:06:45,880
+you do this through the push command. When there 
+are changes to your code on GitHub, and you want  
+
+60
+00:06:45,880 --> 00:06:52,510
+to bring those to your local machine, then you use 
+the pull command, you pull down changes from the  
+
+61
+00:06:52,510 --> 00:06:57,490
+remote repository. Those are all the commands 
+that I want to cover. To get started. Again,  
+
+62
+00:06:57,490 --> 00:07:03,790
+we're going to go over examples of each of these. 
+The first thing you will need to do is of course,  
+
+63
+00:07:03,790 --> 00:07:09,460
+sign up for an account on GitHub. This is pretty 
+straightforward. You enter minimal information,  
+
+64
+00:07:09,460 --> 00:07:14,890
+and then you sign up for an account, you will get 
+an email that will ask you to verify and then you  
+
+65
+00:07:14,890 --> 00:07:20,560
+can log into your account. When you log in, you 
+will either be on this page, which is your profile  
+
+66
+00:07:20,560 --> 00:07:28,450
+page that you can access from this drop down menu, 
+or you might be on the dashboard page here. Either  
+
+67
+00:07:28,450 --> 00:07:34,810
+way, you will have access to this green button 
+here, or this plus sign and the drop down here  
+
+68
+00:07:34,810 --> 00:07:42,340
+where you can create a new repository. Now a 
+repository is basically a project. It's all of  
+
+69
+00:07:42,340 --> 00:07:48,400
+your coding files and folders for whatever kind 
+of application that you're building. For example,  
+
+70
+00:07:48,400 --> 00:07:53,590
+this is a repository that I have, it's for 
+a curriculum app that I've been building,  
+
+71
+00:07:53,590 --> 00:08:00,730
+you can see the mockups pretty straightforward 
+application. And in this repository, this is my  
+
+72
+00:08:00,730 --> 00:08:06,640
+complete project with the folders and all of my 
+coding files are inside of these folders. For  
+
+73
+00:08:06,640 --> 00:08:12,730
+this one application, each application or project 
+is in a separate repository. So I'm going to go  
+
+74
+00:08:12,730 --> 00:08:20,410
+ahead and create a new repository here, give it a 
+name demo repo. By the way repo is just short for  
+
+75
+00:08:20,410 --> 00:08:31,060
+repository. I'm going to leave these settings as 
+they are and click Create repository. Now you can  
+
+76
+00:08:31,060 --> 00:08:37,570
+create your files and folders for this repository 
+locally on your machine. Or you can create them  
+
+77
+00:08:37,570 --> 00:08:43,809
+straight in the online editor on the GitHub 
+website. So I'm going to go ahead and create a  
+
+78
+00:08:43,809 --> 00:08:50,680
+basic markdown file called a readme. And this is 
+the most basic file that you will find in almost  
+
+79
+00:08:50,680 --> 00:08:56,140
+every project that contains text to describe 
+what the project is about what it does, and  
+
+80
+00:08:56,140 --> 00:09:01,780
+any other relevant information. So I'm going to 
+click here, create a new file, I'm going to name  
+
+81
+00:09:01,780 --> 00:09:10,870
+it readme.md for markdown. markdown is basically 
+an easy way to format your text in these sort of  
+
+82
+00:09:10,870 --> 00:09:17,350
+files. So I'm going to come down here and type 
+some text. Now markdown has all the shortcuts  
+
+83
+00:09:17,350 --> 00:09:24,820
+like one hash tag for a main header. So I'm just 
+going to put demo here and then some plain text,  
+
+84
+00:09:24,820 --> 00:09:33,070
+so I'll put some description. And then I'll scroll 
+to the bottom to commit the file. In other words,  
+
+85
+00:09:33,070 --> 00:09:40,150
+save this file. I just want to point out really 
+quickly that this create readme.md is placeholder  
+
+86
+00:09:40,150 --> 00:09:45,730
+text. But if you don't write anything else here, 
+and when I commit this, it will use this text as  
+
+87
+00:09:45,730 --> 00:09:53,290
+the default. So let me commit. And you can see 
+here that this is the commit message from when I  
+
+88
+00:09:53,290 --> 00:09:59,890
+saved this README file. And now you can see the 
+readme file, which because it's named README,  
+
+89
+00:09:59,890 --> 00:10:08,050
+dot MD is the default file that GitHub always 
+shows down here. I can also go into the file here,  
+
+90
+00:10:08,050 --> 00:10:13,540
+which is the same thing, except with a few 
+different options here. And in either screen,  
+
+91
+00:10:13,540 --> 00:10:19,900
+I have this edit this file option. So I'm going to 
+go ahead and do that. I'm going to simply change  
+
+92
+00:10:19,900 --> 00:10:28,690
+this to an exclamation point. Now the default 
+text instead of create readme.md is now update  
+
+93
+00:10:28,690 --> 00:10:35,920
+readme.md, which isn't that descriptive, but it's 
+okay for right now. So I'm going to commit, and by  
+
+94
+00:10:35,920 --> 00:10:42,790
+committing, I saved my changes here. And if I go 
+to the demo repo, it shows my last commit message  
+
+95
+00:10:42,790 --> 00:10:50,140
+here as update readme.md. Now, if I want to see 
+my entire history of changes, in other words,  
+
+96
+00:10:50,140 --> 00:10:56,440
+every commit that I've made, I can come here to 
+commits. And each commit has a unique identifier.  
+
+97
+00:10:56,440 --> 00:11:03,160
+And I can also see the message or the title that 
+I wrote on these commits, I can come back to this  
+
+98
+00:11:03,160 --> 00:11:09,790
+one and see what was added this green with the 
+plus signs means these lines were added to this  
+
+99
+00:11:09,790 --> 00:11:17,530
+file. And then I'll go back, and in the updated 
+commit, it shows me this red with a minus sign,  
+
+100
+00:11:17,530 --> 00:11:23,050
+that means this line was deleted, and then the 
+green with the plus means this line was added,  
+
+101
+00:11:23,050 --> 00:11:29,740
+anything that's white means it stayed the same. 
+So this is a very basic view of seeing changes.  
+
+102
+00:11:29,740 --> 00:11:37,510
+Now what about using this on your local machine, 
+if you are using a Mac or Linux operating system,  
+
+103
+00:11:37,510 --> 00:11:44,350
+you should already have Git installed. You can 
+check this by opening your terminal or command  
+
+104
+00:11:44,350 --> 00:11:53,650
+line application and typing in get space dash 
+dash version. If Git is not already installed,  
+
+105
+00:11:53,650 --> 00:11:59,860
+I highly recommend checking out this tutorial by 
+Atlassian, which I will link in the description  
+
+106
+00:11:59,860 --> 00:12:06,760
+below. It walks you through how to install Git 
+on any operating system. Now I do want to note  
+
+107
+00:12:06,760 --> 00:12:12,970
+for the Windows installation, when you download 
+the get Windows Installer, I recommend you choose  
+
+108
+00:12:12,970 --> 00:12:19,990
+the Git Bash option from the install menu. You 
+can of course use Command Prompt and it will set  
+
+109
+00:12:19,990 --> 00:12:25,540
+up get in command prompt for you. But in the past, 
+I've had an easier time with Git Bash on Windows.  
+
+110
+00:12:25,540 --> 00:12:33,460
+for Mac, it gives you a few different options 
+for install. But I highly recommend you use the  
+
+111
+00:12:33,460 --> 00:12:39,550
+homebrew package manager if you can. And it takes 
+you through all of the steps here. But again,  
+
+112
+00:12:39,550 --> 00:12:45,220
+you probably already have Git installed if 
+you're using a Mac or Linux and don't need  
+
+113
+00:12:45,220 --> 00:12:51,790
+to worry about this. There's just one more piece 
+of setup before we continue with the rest of the  
+
+114
+00:12:51,790 --> 00:12:58,060
+Git tutorial. And that is getting a code editor. 
+Of course, you can write code in whatever you  
+
+115
+00:12:58,060 --> 00:13:04,600
+want. Any type of word processing software we'll 
+do from Notepad, Microsoft Word, but there are  
+
+116
+00:13:04,600 --> 00:13:11,320
+specific ones may for coding, and many of them are 
+really good and free. Visual Studio code is a free  
+
+117
+00:13:11,320 --> 00:13:17,590
+code editor made by Microsoft is widely used with 
+people learning to code and professionals alike.  
+
+118
+00:13:17,590 --> 00:13:25,270
+So you can install it for free from code dot 
+visual studio.com. It's available on every major  
+
+119
+00:13:25,270 --> 00:13:34,150
+operating system, Mac, Windows and Linux. Now 
+I have Visual Studio Code open with no files or  
+
+120
+00:13:34,150 --> 00:13:40,990
+folders inside. If you haven't used this before, 
+then all of these icons on the side are how you're  
+
+121
+00:13:40,990 --> 00:13:47,050
+going to navigate around your project and use your 
+tools. So I'm going to come to this top one. And  
+
+122
+00:13:47,050 --> 00:13:52,240
+this bar comes out where I'm going to see all my 
+files and folders, I'm just going to open a folder  
+
+123
+00:13:52,240 --> 00:13:58,720
+real quick. In this test folder, when you go to 
+my git, then this is an empty folder that I have,  
+
+124
+00:13:58,720 --> 00:14:04,930
+I'm going to click Open. And now I have a folder 
+that's open in Visual Studio code that I can  
+
+125
+00:14:04,930 --> 00:14:09,430
+actually add files and folders to but I'm not 
+going to right now because I'm actually going  
+
+126
+00:14:09,430 --> 00:14:16,030
+to pull the repo that we created at the beginning 
+of this tutorial here on GitHub, I'm going to pull  
+
+127
+00:14:16,030 --> 00:14:23,350
+that to my local system using Git. So in Visual 
+Studio code, I have access to a terminal from here  
+
+128
+00:14:23,350 --> 00:14:29,560
+that I'm going to use. If I come up to the top, in 
+the View menu, I'm going to come to terminal and  
+
+129
+00:14:30,670 --> 00:14:36,340
+select it. And now it opens this terminal here. 
+By the way, the only reason why this is good is  
+
+130
+00:14:36,340 --> 00:14:42,790
+because my folder is named Git. And because I've 
+opened the folder here, it automatically uses  
+
+131
+00:14:42,790 --> 00:14:49,180
+that as the directory for my terminal. So now I 
+want to clone down my repo to my local machine.  
+
+132
+00:14:49,180 --> 00:14:54,400
+I want to pull all that code down here so I can 
+work with it locally. I'm going to use a command  
+
+133
+00:14:54,400 --> 00:15:01,510
+called git clone. And then in clone or download 
+here, clone with SSH Exactly what we just set up.  
+
+134
+00:15:01,510 --> 00:15:08,920
+So I'm going to copy this, go back to my terminal 
+and paste. And I'll hit Enter. And now we can see  
+
+135
+00:15:08,920 --> 00:15:17,080
+a folder here, which is my repo from GitHub that's 
+pulled down into the directory that I'm in. So I'm  
+
+136
+00:15:17,080 --> 00:15:22,990
+going to move inside this folder real quick from 
+the command line, which I can just do by CD, and  
+
+137
+00:15:22,990 --> 00:15:29,590
+then the name of the folder to change directory 
+into the folder. So now I am inside of the folder  
+
+138
+00:15:29,590 --> 00:15:35,440
+demo repo, which was the name of the repository 
+we created on GitHub. So when it pulled it down,  
+
+139
+00:15:35,440 --> 00:15:40,600
+it gave the folder this name, so my whole 
+repositories inside of that folder, and now  
+
+140
+00:15:40,600 --> 00:15:46,180
+it says Git master. Now, this may look different 
+on your machine, this part looks different on  
+
+141
+00:15:46,180 --> 00:15:52,600
+every machine. I have a specific setup to make it 
+look like this. But either way, you will probably  
+
+142
+00:15:52,600 --> 00:15:59,710
+see some kind of indication that you are in a 
+git repository now. Now, how do you know this  
+
+143
+00:15:59,710 --> 00:16:05,590
+looks like a regular folder and a regular README 
+file? Well, there's actually a hidden folder that  
+
+144
+00:16:05,590 --> 00:16:11,380
+you can't see here. And that you won't see on 
+most operating systems unless you have selected  
+
+145
+00:16:11,380 --> 00:16:17,500
+to show hidden folders. And that is called the 
+dot get directory. So there's just a special  
+
+146
+00:16:17,500 --> 00:16:23,770
+command in my terminal that I will use to show you 
+that folder. Now the LA command that I use here  
+
+147
+00:16:23,770 --> 00:16:34,600
+is actually a Mac shorthand for ls space, dash l 
+A, which means list everything in the directory,  
+
+148
+00:16:34,600 --> 00:16:40,540
+including hidden files and folders. So if you're 
+not on a Mac, I don't think la will work for you.  
+
+149
+00:16:40,540 --> 00:16:47,930
+But you can use ls space dash LA to do the same 
+thing. So you can see, here's the readme file, and  
+
+150
+00:16:47,930 --> 00:16:54,290
+then there's something dot Git. And because it's 
+blue here, that means it's actually a folder. And  
+
+151
+00:16:54,290 --> 00:17:02,570
+this hidden Git folder, actually stores all of the 
+files that save your commits, or your code changes  
+
+152
+00:17:02,570 --> 00:17:10,730
+over time. It has all of the changes recorded in 
+the history of this repository, which includes the  
+
+153
+00:17:10,730 --> 00:17:16,339
+ones we made on github.com. So now let's make some 
+more locally, we're going to go into the readme  
+
+154
+00:17:16,339 --> 00:17:23,359
+file, and come here and add a sub header. Not too 
+creative, I'm just going to call it sub header,  
+
+155
+00:17:23,359 --> 00:17:34,850
+and then some more text. Now that I have changed 
+this file, I need to save the changes in Git. So  
+
+156
+00:17:34,850 --> 00:17:41,090
+I do that through a commit still. So first, I'm 
+going to use the git status command. Now the git  
+
+157
+00:17:41,090 --> 00:17:47,240
+status command shows me all of the files that were 
+updated or created or deleted, but haven't been  
+
+158
+00:17:47,240 --> 00:17:54,290
+saved in a commit yet. So for example, if I come 
+here, and I create a new file, I'm going to call  
+
+159
+00:17:54,290 --> 00:18:05,420
+this index dot HTML. And I'm just going to put a 
+quick div inside with nothing else. And now let me  
+
+160
+00:18:05,420 --> 00:18:11,870
+rerun the git status command. And now you can see 
+I have one file that's been modified. And one file  
+
+161
+00:18:11,870 --> 00:18:18,170
+that it says is untracked, meaning Git doesn't 
+know about this file yet. So you have to tell Git  
+
+162
+00:18:18,170 --> 00:18:24,380
+to track the file before you can save it to get 
+to do that, you need to use the git add command,  
+
+163
+00:18:24,380 --> 00:18:30,620
+and then tell it which files to track. Now most of 
+the time, or a lot of the time you see people use  
+
+164
+00:18:30,620 --> 00:18:37,160
+a period, which means you're telling Git to track 
+all of the files that are listed here, in both  
+
+165
+00:18:37,160 --> 00:18:44,060
+the untracked and the modified section. So both 
+the changes we made to read me and the new file  
+
+166
+00:18:44,060 --> 00:18:52,190
+index dot HTML would be staged with Git if we did 
+git add period, because includes all of the files,  
+
+167
+00:18:52,190 --> 00:19:01,490
+you could also optionally tell it just the names 
+of each individual file or folder that you want  
+
+168
+00:19:01,490 --> 00:19:08,930
+Git to track. In this case, I'm just going to use 
+the dot. Now I'm going to use git status again.  
+
+169
+00:19:08,930 --> 00:19:13,880
+And now you can see that all of the changes have 
+been tracked. That's why they show up differently  
+
+170
+00:19:13,880 --> 00:19:21,770
+now, and they are ready to be committed. So I'm 
+going to come here and do git commit dash m.  
+
+171
+00:19:21,770 --> 00:19:29,450
+now dash M is for message. And you need to have a 
+message in order to commit your files. The message  
+
+172
+00:19:29,450 --> 00:19:34,700
+could be one character in meaningless if you want, 
+but there needs to be a message. And ideally,  
+
+173
+00:19:34,700 --> 00:19:42,140
+that message should have something to do with the 
+what and why behind the commit you're making. So  
+
+174
+00:19:42,140 --> 00:19:49,370
+I'm going to add a message here. Added index dot 
+HTML. And this is just the title of the message.  
+
+175
+00:19:49,370 --> 00:19:55,070
+If you remember from the web interface, there 
+were two boxes, a title and a description. This  
+
+176
+00:19:55,070 --> 00:20:01,700
+first dash M and what's inside of the quotes 
+is a message You can add a second one for the  
+
+177
+00:20:01,700 --> 00:20:10,250
+description box. So I can say some description. 
+And I'll click Enter. And now it gives me some  
+
+178
+00:20:10,250 --> 00:20:16,310
+information, two files change five insertions. 
+But we've still only saved our code locally. The  
+
+179
+00:20:16,310 --> 00:20:23,180
+commit isn't live on GitHub yet. We make it live 
+by using another Git command called git push,  
+
+180
+00:20:23,180 --> 00:20:30,170
+which means I want to push this live to a 
+remote repository where my project is hosted.  
+
+181
+00:20:33,220 --> 00:20:38,830
+In order to push them to GitHub under your 
+account, you're going to have to prove to  
+
+182
+00:20:38,830 --> 00:20:45,490
+GitHub that you are the owner of your account. 
+So you have to connect your local machine to  
+
+183
+00:20:45,490 --> 00:20:52,660
+your GitHub account somehow. The way this is 
+done is by using SSH keys, you need to start  
+
+184
+00:20:52,660 --> 00:20:59,530
+by generating a key locally using the SSH key Gen 
+command, then you specify the type of encryption,  
+
+185
+00:20:59,530 --> 00:21:06,310
+and then the strength of encryption. And at 
+the end, you need to include your GitHub email  
+
+186
+00:21:06,310 --> 00:21:11,350
+address, this is just a test for me, because I 
+already have key set up. So I'm just going to  
+
+187
+00:21:11,350 --> 00:21:18,430
+put a fake email address. But make sure that the 
+email address you enter here is the same one you  
+
+188
+00:21:18,430 --> 00:21:26,170
+use to log into your GitHub account, click Enter. 
+Now, the default file for the SSH key is inside  
+
+189
+00:21:26,170 --> 00:21:33,730
+your user directory in the dot SSH directory, and 
+it will be called ID underscore RSA. I'm going to  
+
+190
+00:21:33,730 --> 00:21:38,050
+give it a different name here, because I already 
+have a key under that name. You can optionally  
+
+191
+00:21:38,050 --> 00:21:43,000
+enter a passphrase for your key here, or leave 
+it blank. So I'm just going to click Enter to  
+
+192
+00:21:43,000 --> 00:21:48,910
+leave it blank. And my key has been generated. 
+Now I am going to search for the key that I just  
+
+193
+00:21:48,910 --> 00:21:56,440
+generated. And now I find that there are two. So 
+there's test key and test key dot pub. So test key  
+
+194
+00:21:56,440 --> 00:22:04,720
+dot pub is the key that you're going to upload to 
+your GitHub interface. pub stands for public, it's  
+
+195
+00:22:04,720 --> 00:22:11,020
+called your public key, which means that it's okay 
+for other people to see this key. The key that was  
+
+196
+00:22:11,020 --> 00:22:16,930
+generated without the dot pub extension is called 
+your private key, and is the one that you have to  
+
+197
+00:22:16,930 --> 00:22:23,020
+keep secure on your local machine, you don't share 
+this key with anybody. How it works is that the  
+
+198
+00:22:23,020 --> 00:22:30,100
+public key you put on GitHub, and then every time 
+you want to connect to GitHub or push your code on  
+
+199
+00:22:30,100 --> 00:22:38,800
+GitHub or use your account via your local machine, 
+you use your private key to show GitHub, that you  
+
+200
+00:22:38,800 --> 00:22:45,460
+are the one that generated this public key. It's 
+a mathematical proof that only this private key  
+
+201
+00:22:45,460 --> 00:22:53,440
+could have generated this public key. I'm going 
+to print out this public key. And your key should  
+
+202
+00:22:53,440 --> 00:23:00,310
+look something like this SSH dash, RSA starts with 
+this, it has a bunch of characters in the middle  
+
+203
+00:23:00,310 --> 00:23:06,700
+and it ends with your email. Now you need to copy 
+this whole key, which you can do by highlighting  
+
+204
+00:23:06,700 --> 00:23:11,500
+it in your terminal or command line, which 
+automatically copies it, you don't need to do  
+
+205
+00:23:11,500 --> 00:23:17,800
+Ctrl or Command C, because Ctrl C actually means 
+something completely different in the terminal,  
+
+206
+00:23:17,800 --> 00:23:24,970
+not copy. There's also a terminal command that 
+allows you to copy it's called PB copy. And then  
+
+207
+00:23:24,970 --> 00:23:31,540
+you do the less than symbol and then the path to 
+your file. So it's in our user home directory.  
+
+208
+00:23:31,540 --> 00:23:36,850
+And I didn't actually push it, put it in the dot 
+SSH directory, but this is the directory you would  
+
+209
+00:23:36,850 --> 00:23:44,080
+have your key in. And then it's just test key 
+dot pub. And now it's copied to my clipboard on  
+
+210
+00:23:44,080 --> 00:23:50,950
+GitHub. I'm going to go to Settings. And in the 
+list of all settings, I'm going to go to SSH and  
+
+211
+00:23:50,950 --> 00:23:58,720
+GPG keys, and you can see any SSH keys associated 
+with your account. Then you just click on new SSH  
+
+212
+00:23:58,720 --> 00:24:04,420
+key, you can give it whatever title you want. 
+This is just for your reference. And then you  
+
+213
+00:24:04,420 --> 00:24:11,380
+paste your key in here. And I'm going to remove 
+the extra enter at the end. And now add SSH key  
+
+214
+00:24:11,380 --> 00:24:18,100
+to confirm my password. And now you can see 
+my key was successfully added. The only thing  
+
+215
+00:24:18,100 --> 00:24:24,400
+left to do is to make sure that your local Git 
+command line interface knows about the key you  
+
+216
+00:24:24,400 --> 00:24:30,340
+just generated. And I'm going to link all of these 
+steps in the description below. You need to start  
+
+217
+00:24:30,340 --> 00:24:38,860
+the SSH agent. Then if you're using version 10 
+point 12.2 or later, you will need to modify this  
+
+218
+00:24:38,860 --> 00:24:46,330
+file your SSH config and add this text to it. I'm 
+going to just show you how to get into that file.  
+
+219
+00:24:46,330 --> 00:24:53,260
+Now. Paste the location of the file in your SSH 
+directory and then anywhere in this file, perhaps  
+
+220
+00:24:53,260 --> 00:24:59,260
+at the end, you can paste in that information. 
+I'm not going to do that because I already have  
+
+221
+00:24:59,260 --> 00:25:05,780
+my file set up So I'm going to delete it. After 
+you do that, you'll run this SSH add command from  
+
+222
+00:25:05,780 --> 00:25:13,070
+your terminal. And then your key will be set up to 
+work with Git. Again, all of the information that  
+
+223
+00:25:13,070 --> 00:25:18,800
+I covered with keys here is going to be linked in 
+the description below. But this is the general way  
+
+224
+00:25:18,800 --> 00:25:23,900
+that you will do it with any operating system, 
+although there might be some slight variations.  
+
+225
+00:25:27,850 --> 00:25:34,750
+Now there are two more arguments we have to put 
+here. The first one is origin. And the second one  
+
+226
+00:25:34,750 --> 00:25:42,550
+is master. Now origin is an option set for us 
+here, and is basically a word that stands for  
+
+227
+00:25:42,550 --> 00:25:48,790
+the location of our Git repository. Master is the 
+branch that we want to push to. And we'll get into  
+
+228
+00:25:48,790 --> 00:25:55,600
+what that means in a minute. When I click Enter, 
+and now I'll refresh this page. And you can see my  
+
+229
+00:25:55,600 --> 00:26:03,730
+code changes are all live on GitHub. Now, you can 
+also see that there are three commits to that we  
+
+230
+00:26:03,730 --> 00:26:12,010
+made online on github.com, and one that we made 
+locally and pushed up to github.com. Of course,  
+
+231
+00:26:12,010 --> 00:26:17,770
+this was our commit message that we made locally. 
+And this was the description that we wrote,  
+
+232
+00:26:17,770 --> 00:26:24,310
+after that second dash m, we can see all of our 
+file changes that we made locally here as well.  
+
+233
+00:26:24,310 --> 00:26:30,760
+So this was to demonstrate how to create a new 
+Git repository using GitHub. But what about if  
+
+234
+00:26:30,760 --> 00:26:37,210
+you start a repo locally, so let me exit out 
+of these. And I will create a new folder here  
+
+235
+00:26:37,210 --> 00:26:48,100
+called demo repo to drag it outside. So now it's 
+in a completely separate folder from the other  
+
+236
+00:26:48,100 --> 00:26:52,750
+Git repository that we have. But this one's 
+not a git repository yet, and nothing's in  
+
+237
+00:26:52,750 --> 00:27:01,870
+there. So I'm going to move into that folder in 
+the terminal. Demo two. So now I'm in demo two,  
+
+238
+00:27:01,870 --> 00:27:08,590
+you can see it's not a git repository. Even if I 
+look for that hidden Git folder, it's not there.  
+
+239
+00:27:08,590 --> 00:27:16,180
+So let me first add a file in here. And I'm 
+again, going to add a readme file that MD and  
+
+240
+00:27:16,180 --> 00:27:25,150
+I'm going to add a header demo to and some text. 
+Now, if I want to turn this into a git repository,  
+
+241
+00:27:25,150 --> 00:27:33,940
+I can use the command line and say Git init. And 
+it says initialize Git repository in yada yada,  
+
+242
+00:27:33,940 --> 00:27:41,720
+this folder, and now you can see I have the 
+get keyword there. And if I do get status,  
+
+243
+00:27:41,720 --> 00:27:50,090
+I can see there's this untracked README file, I 
+will go ahead and add that file, either with the  
+
+244
+00:27:50,090 --> 00:27:57,650
+period or the name of the file. git status again, 
+okay, so the file is ready to be committed. And  
+
+245
+00:27:57,650 --> 00:28:10,310
+now I will do git commit dash m, created README. 
+And now I'll put a description here, and Enter.  
+
+246
+00:28:10,310 --> 00:28:18,500
+Now what if I want to push this live? Let's try 
+git push origin master. And now you can see it's  
+
+247
+00:28:18,500 --> 00:28:24,740
+giving me this error fatal origin does not appear 
+to be a git repository. Because we didn't clone  
+
+248
+00:28:24,740 --> 00:28:31,310
+this down from a git repository. We didn't already 
+create this repo on GitHub, we created it locally.  
+
+249
+00:28:31,310 --> 00:28:37,250
+So Git is saying I have no idea where to push this 
+to because it's not connected to anything. So we  
+
+250
+00:28:37,250 --> 00:28:43,100
+have to create that connection. And first, the 
+easiest way to do this is by creating an empty  
+
+251
+00:28:43,100 --> 00:28:50,510
+Git repository up on GitHub. So I'm going to come 
+here, create new repository, I'm going to call  
+
+252
+00:28:50,510 --> 00:28:59,180
+this demo repo to don't need a description, going 
+to leave all this here. Now I have another empty  
+
+253
+00:28:59,180 --> 00:29:07,100
+repository. So to start pushing here, I'm going 
+to copy this and say Git remote, now remote mean  
+
+254
+00:29:07,100 --> 00:29:12,770
+somewhere else, but not on this computer. We're 
+going to use this to add a reference to the remote  
+
+255
+00:29:12,770 --> 00:29:21,020
+repository on GitHub. And then I'm going to say 
+add origin and paste that link that I copied. And  
+
+256
+00:29:21,020 --> 00:29:29,660
+I can check that by saying Git remote dash V, 
+and it shows any remote repositories that I've  
+
+257
+00:29:29,660 --> 00:29:39,380
+connected to this repo. Now that these are set up. 
+I can now use git push origin, Master just as I  
+
+258
+00:29:39,380 --> 00:29:44,150
+did before. Now, there's a shortcut here, because 
+if I don't want to type out this whole thing,  
+
+259
+00:29:44,150 --> 00:29:50,180
+every time in the future, I can just use git push, 
+but I have to set something called an upstream,  
+
+260
+00:29:50,180 --> 00:29:57,060
+meaning this is where I want to push it to 
+by default. So I'm going to do dash u for set  
+
+261
+00:29:57,060 --> 00:30:04,980
+upstream and then enter In the future, I can just 
+use git push without typing out origin Master,  
+
+262
+00:30:04,980 --> 00:30:11,220
+it says to GitHub looks like everything was 
+pushed just fine, I will refresh this page,  
+
+263
+00:30:11,220 --> 00:30:18,390
+and I can see the readme that I just added. So 
+that's how you initialize a repository locally and  
+
+264
+00:30:18,390 --> 00:30:25,440
+push it to a remote location like GitHub. So let's 
+review the workflows that we've gone over so far,  
+
+265
+00:30:25,440 --> 00:30:34,200
+and compare the flow of adding code in the 
+GitHub interface versus writing it locally.  
+
+266
+00:30:34,200 --> 00:30:40,230
+So when we first started working in the GitHub 
+interface, we wrote some code in the readme,  
+
+267
+00:30:40,230 --> 00:30:46,560
+and then we committed our changes we saved them 
+to get now notice, there wasn't an added step  
+
+268
+00:30:46,560 --> 00:30:52,980
+here. And we never did a git add to stage changes. 
+Well, that's because GitHub handles that for us.  
+
+269
+00:30:52,980 --> 00:30:59,070
+So really, by committing in GitHub, we are adding 
+and committing at the same time. And then that was  
+
+270
+00:30:59,070 --> 00:31:05,430
+it really, because it was our repository, we 
+had full access to change whatever we wanted,  
+
+271
+00:31:05,430 --> 00:31:11,550
+we could just update the code just by committing 
+it in the GitHub interface. Of course, we didn't  
+
+272
+00:31:11,550 --> 00:31:17,520
+have to push the code because it was already live 
+on GitHub. There's no other remote repository,  
+
+273
+00:31:17,520 --> 00:31:23,760
+because it's already in the remote repository. 
+Now, if we didn't own the repository, or we didn't  
+
+274
+00:31:23,760 --> 00:31:30,600
+have access rights, or we needed other people 
+to review our code, before we merged it in with  
+
+275
+00:31:30,600 --> 00:31:35,670
+all the rest of the code, then we would also have 
+to take the extra step of making a pull request,  
+
+276
+00:31:35,670 --> 00:31:41,610
+which is something we're going to cover later 
+in this video. So let's compare this workflow  
+
+277
+00:31:41,610 --> 00:31:48,390
+if we're just writing code on GitHub, versus doing 
+it locally, and then pushing it up to GitHub. So  
+
+278
+00:31:48,390 --> 00:31:54,780
+luckily, in our text editor, we wrote the code. 
+And then we had to do git add to let get know  
+
+279
+00:31:54,780 --> 00:32:01,530
+about the changes. And then we saved them to get 
+using the git commit command. And then we push  
+
+280
+00:32:01,530 --> 00:32:09,240
+them to the remote repository on GitHub, using the 
+git push command, and that updated GitHub source  
+
+281
+00:32:09,240 --> 00:32:15,960
+code or the code in the GitHub repository with our 
+changes that were made locally. And then just like  
+
+282
+00:32:15,960 --> 00:32:22,110
+before, if we didn't have access rights, or we 
+needed a code review, before we merge changes in,  
+
+283
+00:32:22,110 --> 00:32:28,890
+we'll need to make a pull request. So these two 
+methods cover the most basic ways to use Git,  
+
+284
+00:32:28,890 --> 00:32:36,030
+by using the GitHub web interface and then doing 
+it locally. If you have any questions about this,  
+
+285
+00:32:36,030 --> 00:32:42,120
+then please leave them in the comments below. 
+Otherwise, let's move on to Git branching.  
+
+286
+00:32:45,240 --> 00:32:50,970
+Let's first go over some of the concepts 
+of branching, and then we'll dive into a  
+
+287
+00:32:50,970 --> 00:32:57,900
+practical example. Now, what is Git branching? 
+You seen in our examples that we're on something  
+
+288
+00:32:57,900 --> 00:33:05,550
+called the master branch. Now master is a naming 
+convention for the main or the default branch in  
+
+289
+00:33:05,550 --> 00:33:12,630
+a repository. So if you're just working off of one 
+branch, that's where your code will live, and all  
+
+290
+00:33:12,630 --> 00:33:19,410
+your code, all your commits, everything will be 
+in that one branch. Now, this is called branching,  
+
+291
+00:33:19,410 --> 00:33:25,620
+because it starts to look more like a tree when 
+you have multiple branches. So we saw earlier  
+
+292
+00:33:25,620 --> 00:33:31,080
+that we had a master branch, we were committing 
+to that master branch. But we could also make  
+
+293
+00:33:31,080 --> 00:33:37,260
+another branch. We'll call it feature branch. So 
+let's talk about what happens when we create a  
+
+294
+00:33:37,260 --> 00:33:45,870
+new branch. At first, the code on master and this 
+new feature branch will be exactly the same. But  
+
+295
+00:33:45,870 --> 00:33:55,020
+as you make updates to the feature branch, those 
+changes are only seen in the feature branch. So if  
+
+296
+00:33:55,020 --> 00:34:01,080
+you make changes on the feature branch, you make 
+a commit to save those changes on to that branch.  
+
+297
+00:34:01,080 --> 00:34:07,530
+And then you switch back to the master branch, you 
+won't be able to see any of the changes that you  
+
+298
+00:34:07,530 --> 00:34:14,760
+made on that feature branch. Each individual 
+branch has no way of knowing what commits or  
+
+299
+00:34:14,760 --> 00:34:21,030
+what changes have been made to any other branch. 
+Each branch is only keeping track of what changes  
+
+300
+00:34:21,030 --> 00:34:28,080
+are made on its own branch. Now you can continue 
+to change the code on master branch and save it  
+
+301
+00:34:28,080 --> 00:34:34,110
+through a commit to the master branch. And then if 
+you switch back to the feature branch, likewise,  
+
+302
+00:34:34,110 --> 00:34:40,110
+you will not be able to see the changes that you 
+just saved to master. Why is this useful? It's  
+
+303
+00:34:40,110 --> 00:34:47,460
+extremely useful because you will be building out 
+new features to applications that may break your  
+
+304
+00:34:47,460 --> 00:34:54,840
+code or they are not finished yet. And you don't 
+want to save them to the main master branch. You  
+
+305
+00:34:54,840 --> 00:35:01,260
+want to work on them in kind of a sandbox area. So 
+you can write all the code unit And get it correct  
+
+306
+00:35:01,260 --> 00:35:07,740
+and in the state that you want, before you merge 
+it back into the main branch of the code base.  
+
+307
+00:35:07,740 --> 00:35:14,520
+And this is really helpful when you have many 
+different people working in the same repository,  
+
+308
+00:35:14,520 --> 00:35:19,680
+or a lot of different branches going on at 
+once. One very common thing that you'll see  
+
+309
+00:35:19,680 --> 00:35:26,010
+in development is that you'll be working on let's 
+say, this feature branch for a week or more, and  
+
+310
+00:35:26,010 --> 00:35:32,100
+you have all of these changes that you've made. 
+And then you find out there's this major bug that  
+
+311
+00:35:32,100 --> 00:35:39,330
+you have to fix real quick. So for that, we make 
+this other branch called a hotfix branch here,  
+
+312
+00:35:39,330 --> 00:35:47,010
+represented by yellow. And you can see that I made 
+the change in one commit to fix whatever bug was  
+
+313
+00:35:47,010 --> 00:35:53,250
+wrong with the code on its own branch, I made sure 
+it was working correctly. And then I merged it  
+
+314
+00:35:53,250 --> 00:35:59,670
+back into the master branch. Now that we've gone 
+over the concepts of branching, let's dive into  
+
+315
+00:35:59,670 --> 00:36:05,730
+the command line and try it out. And now I'm using 
+a full screen terminal just so I have more space  
+
+316
+00:36:05,730 --> 00:36:11,430
+as I'm running different Git commands that are 
+going to take up more screen space to show you,  
+
+317
+00:36:11,430 --> 00:36:18,690
+but it works the exact same way as the terminal 
+inside of VS code. So I'm back in my terminal  
+
+318
+00:36:18,690 --> 00:36:26,370
+inside of my demo repo again. And you can see here 
+I have information about my git branch. Again,  
+
+319
+00:36:26,370 --> 00:36:31,860
+you might see this presented in different ways 
+it shows you're on the master branch. If I type  
+
+320
+00:36:31,860 --> 00:36:39,510
+in git branch, you can see that I currently only 
+have one branch and its master. And you can also  
+
+321
+00:36:39,510 --> 00:36:46,350
+see there's a star beside it. And that means that 
+I am currently on that branch. So I'm going to hit  
+
+322
+00:36:46,350 --> 00:36:52,560
+the letter Q here to get out of that. And now I'm 
+going to create a new branch. So I do that with  
+
+323
+00:36:52,560 --> 00:37:00,510
+git checkout. And git checkout is what you will 
+use to switch between branches. But to tell it  
+
+324
+00:37:00,510 --> 00:37:08,340
+to create a new branch, use dash B, and then you 
+give it the name of your branch. So in this case,  
+
+325
+00:37:08,340 --> 00:37:15,540
+I'm going to call it feature. Now if you're 
+working in real application with people, you want  
+
+326
+00:37:15,540 --> 00:37:22,320
+to make this name as descriptive as possible. Some 
+people like to use feature slash the ticket number  
+
+327
+00:37:22,320 --> 00:37:28,140
+or description, or you can use hyphen. And then 
+you could give it the issue number, like if it's  
+
+328
+00:37:28,140 --> 00:37:34,920
+a GitHub issue number 11, or whatever convention 
+you want to use. And then you can make this longer  
+
+329
+00:37:34,920 --> 00:37:42,630
+if you want and put some more details. I'm going 
+to call this feature dash README instructions,  
+
+330
+00:37:42,630 --> 00:37:49,920
+because I'm just going to be updating a section 
+of the readme. Click enter. And now it says I  
+
+331
+00:37:49,920 --> 00:37:55,590
+switched to a new branch, meaning I created this 
+new branch called feature README instructions. And  
+
+332
+00:37:55,590 --> 00:38:03,300
+now you see that my branch changed. So now if I 
+do git branch, again, I have two branches listed  
+
+333
+00:38:03,300 --> 00:38:08,520
+here, and the top one is starred and highlighted. 
+So it shows me which branch I'm currently on,  
+
+334
+00:38:08,520 --> 00:38:16,620
+I'm going to hit Q. And like I mentioned, git 
+checkout, will switch between branches. So now  
+
+335
+00:38:16,620 --> 00:38:23,400
+that I am on this feature reading instructions, I 
+can check out master. And now you see I switch to  
+
+336
+00:38:23,400 --> 00:38:32,070
+master. I'll do git branch shows them on master 
+now. And I will do another git checkout feature,  
+
+337
+00:38:32,070 --> 00:38:39,090
+README instructions, you see that I hit the tab 
+button, and it autofill the rest of the branch.  
+
+338
+00:38:39,090 --> 00:38:47,400
+So I didn't have to type out the whole long name, 
+you can also hit tab. Even if you don't start at  
+
+339
+00:38:47,400 --> 00:38:51,810
+the beginning, like in this case, I started 
+typing feature and then hit tab. But I could  
+
+340
+00:38:51,810 --> 00:38:58,440
+actually start typing instructions and hit tab 
+and it's still autocompletes. Now this is very  
+
+341
+00:38:58,440 --> 00:39:04,170
+useful. Because eventually, when you work in 
+a repo, you're going to start a lot of stuff  
+
+342
+00:39:04,170 --> 00:39:11,370
+with feature or with bug or hotfix or whatever. 
+So only your last few words will be unique. So  
+
+343
+00:39:11,370 --> 00:39:16,290
+that's just something useful to know. So now I'm 
+back on the feature README instructions branch,  
+
+344
+00:39:16,290 --> 00:39:21,570
+and I'm going to make some changes on this branch. 
+So I'm in my code here, I'm going to come into my  
+
+345
+00:39:21,570 --> 00:39:30,960
+README and make a new section. I'm going to say 
+just local development or something and then  
+
+346
+00:39:30,960 --> 00:39:40,860
+give it one step other than say open index dot 
+HTML in your browser, just as a demo. Alright,  
+
+347
+00:39:40,860 --> 00:39:47,250
+I save that. And you can see in VS code, it gives 
+me this m here meaning it's been modified. since  
+
+348
+00:39:47,250 --> 00:39:53,610
+I've last checked this into get. That's kind of 
+a nice feature to have to see which files you've  
+
+349
+00:39:53,610 --> 00:39:59,400
+added and which files you've modified right in 
+your text editor. Alright, now that I've modified  
+
+350
+00:39:59,400 --> 00:40:07,860
+some files, Here, I'm going to do the git status 
+command again. And it says I modified README. So  
+
+351
+00:40:07,860 --> 00:40:14,370
+first, I'm going to save things that have changed 
+on this branch. So I'm going to do the git add  
+
+352
+00:40:14,370 --> 00:40:23,340
+command. And I'm just going to stage the readme 
+changes. And now I will do a git commit, dash m,  
+
+353
+00:40:23,340 --> 00:40:31,320
+and say, A, oops, I have to put that in quotes. So 
+updated. README. Okay, so you can see I have one  
+
+354
+00:40:31,320 --> 00:40:36,990
+file changed for insertions. So now it's saved 
+to get, but it's only saved on this feature,  
+
+355
+00:40:36,990 --> 00:40:43,740
+README instructions branch. So if I do a git 
+checkout Master, come back to my code. And you can  
+
+356
+00:40:43,740 --> 00:40:50,670
+see the changes aren't here, because they're only 
+on that other branch. Now, if I want to here, I  
+
+357
+00:40:50,670 --> 00:40:59,070
+can go ahead and merge these two branches locally, 
+using the Git merge command. But before I do that,  
+
+358
+00:40:59,070 --> 00:41:05,610
+I just want to double check and see the code that 
+emerging in which I can do through the git diff  
+
+359
+00:41:05,610 --> 00:41:13,920
+command. Now, diff, or diffing, shows me what 
+changes have been made, it compares two versions  
+
+360
+00:41:13,920 --> 00:41:19,110
+of the code and shows me all of the lines that 
+have been changed. And you kind of saw this in  
+
+361
+00:41:19,110 --> 00:41:25,260
+the Git interface, because you saw a nice visual 
+representation of the diff, where it showed in  
+
+362
+00:41:25,260 --> 00:41:30,960
+green with a plus sign the lines that had been 
+added, and then in red with the minus sign the  
+
+363
+00:41:30,960 --> 00:41:38,670
+lines that had been removed. And let me say git 
+diff, and the name of the branch, hit Enter.  
+
+364
+00:41:38,670 --> 00:41:47,790
+And now you can see, it shows which file it's 
+talking about this readme.md file. And in white,  
+
+365
+00:41:47,790 --> 00:41:53,070
+it shows text that was already been there, that 
+hasn't been changed. And then it shows that my  
+
+366
+00:41:53,070 --> 00:41:59,730
+master branch doesn't have some of the changes 
+that are in my other branch. So I'm going to hit  
+
+367
+00:41:59,730 --> 00:42:06,420
+q here to get out of this. Alright, now I could go 
+ahead and like I said, use the Git merge command,  
+
+368
+00:42:06,420 --> 00:42:13,200
+passed in the branch, and it'll merge in those 
+changes. But the more common pattern that you  
+
+369
+00:42:13,200 --> 00:42:21,480
+are going to see is pushing these changes on that 
+branch up to GitHub, and then making a PR, so I'm  
+
+370
+00:42:21,480 --> 00:42:28,590
+going to change back to the feature branch, and 
+now do git status. And it says I have no changes  
+
+371
+00:42:28,590 --> 00:42:35,610
+to commit, because they've already been committed. 
+But I do need to push them up to GitHub. So let me  
+
+372
+00:42:35,610 --> 00:42:44,040
+run git push. And now you can see, since I'm on a 
+new branch, it says that I need to tell it which  
+
+373
+00:42:44,040 --> 00:42:50,910
+branch on GitHub I want to push to. Now the answer 
+is almost always that the branch will be named the  
+
+374
+00:42:50,910 --> 00:42:58,080
+same thing on GitHub, and on your local machine. 
+So I could copy this line. And now you'll notice  
+
+375
+00:42:58,080 --> 00:43:08,220
+this set upstream flag here is the same thing 
+that we were doing before with the dash U. It's  
+
+376
+00:43:08,220 --> 00:43:15,210
+just shorthand for set upstream. So I'm going to 
+hit enter here. And now it's pushed up to GitHub.  
+
+377
+00:43:15,210 --> 00:43:22,620
+And it's even giving me a hint for how to create 
+a pull request on GitHub, by giving me these  
+
+378
+00:43:22,620 --> 00:43:31,560
+instructions here. So what is a pull request or 
+a PR, it's basically a request to have your code  
+
+379
+00:43:31,560 --> 00:43:38,700
+pulled into another branch. In the example we're 
+using today, we have a feature branch, and we want  
+
+380
+00:43:38,700 --> 00:43:45,780
+to have our code pulled into the master branch. So 
+we make a PR from the feature branch to the master  
+
+381
+00:43:45,780 --> 00:43:54,600
+branch. Now once we have made a PR, anyone can 
+review our code, comment on it, ask us to make  
+
+382
+00:43:54,600 --> 00:44:01,380
+changes or updates. Now, after you make a PR, you 
+can also update the code just by making additional  
+
+383
+00:44:01,380 --> 00:44:07,140
+commits and pushing them up to GitHub, as long as 
+it's on the same branch that you're making the PR  
+
+384
+00:44:07,140 --> 00:44:14,100
+with. Once the PR is merged, you'll generally 
+delete your feature or source branch. And to  
+
+385
+00:44:14,100 --> 00:44:18,870
+switch back to the master branch. Then when 
+you want to make additional coding changes,  
+
+386
+00:44:18,870 --> 00:44:26,550
+you will create another new branch and start the 
+process over make your commits, make a PR and then  
+
+387
+00:44:26,550 --> 00:44:33,840
+merge again. And I could go straight to this URL, 
+but I'm going to show you how to do it manually on  
+
+388
+00:44:33,840 --> 00:44:41,610
+GitHub first. So I look at my GitHub interface. 
+And you can see already GitHub picked up on the  
+
+389
+00:44:41,610 --> 00:44:48,780
+fact that I just pushed a new branch. So now it's 
+asking me right here if I want to compare this  
+
+390
+00:44:48,780 --> 00:44:54,300
+new branch to another branch and create a pull 
+request, and it takes me to this screen here.  
+
+391
+00:44:54,300 --> 00:45:00,750
+Now sometimes this is confusing for people which 
+branch is being merged into which branch This  
+
+392
+00:45:00,750 --> 00:45:05,730
+GitHub interface does a pretty good job because 
+of the arrow. So you can see that the branch  
+
+393
+00:45:05,730 --> 00:45:11,730
+you're comparing this feature, README instructions 
+will be merged into the base. So there's always a  
+
+394
+00:45:11,730 --> 00:45:16,350
+base branch where all the code is going to get 
+merged into. And then there's the branch you're  
+
+395
+00:45:16,350 --> 00:45:21,930
+comparing. So now I have this message, I have 
+a title, it says updated README. And I can put  
+
+396
+00:45:21,930 --> 00:45:28,560
+some more description here. So usually, I'm going 
+to put a list of the changes that I've made and  
+
+397
+00:45:28,560 --> 00:45:35,130
+maybe some description as to why I made certain 
+decisions. So here, I'm just going to say added  
+
+398
+00:45:35,130 --> 00:45:45,960
+section about local development to the readme, 
+and I will create a pull request. Now that I've  
+
+399
+00:45:45,960 --> 00:45:52,560
+created a pull request, I can actually come here 
+in the interface, I can see any comments that  
+
+400
+00:45:52,560 --> 00:45:59,850
+people have made on the pull request, or I can 
+write more comments of my own, I can look through  
+
+401
+00:45:59,850 --> 00:46:07,860
+all the commits I've made that I'm trying to merge 
+into master right now. And I can also look at all  
+
+402
+00:46:07,860 --> 00:46:14,970
+the files that have been changed, and see the diff 
+of what's been added, removed or updated. Another  
+
+403
+00:46:14,970 --> 00:46:20,850
+thing I can do right here is if I want to make a 
+comment about a particular line of code that I've  
+
+404
+00:46:20,850 --> 00:46:28,710
+written, I can press the plus button, this blue 
+plus button. And now I can make a comment there,  
+
+405
+00:46:28,710 --> 00:46:35,400
+I'm just going to say, add a new sub header and 
+add it as a single comment. And you can see that  
+
+406
+00:46:35,400 --> 00:46:40,980
+the comment appears at the line of code where you 
+hit the plus button. This is a really nice way if  
+
+407
+00:46:40,980 --> 00:46:47,370
+there are multiple people working on a repository 
+to make comments about specific lines of code. And  
+
+408
+00:46:47,370 --> 00:46:55,230
+then usually the person who created this PR will 
+reply to them with an explanation or make another  
+
+409
+00:46:55,230 --> 00:47:01,200
+commit, if changes need to be made to the code 
+or something. Alright, so I'm going to go ahead  
+
+410
+00:47:01,200 --> 00:47:08,940
+and merge this PR. And you'll notice that I added 
+the single comment, it says resolve. Now because  
+
+411
+00:47:08,940 --> 00:47:13,710
+I'm the owner, here I have full permissions, I 
+don't have to resolve I can still merge the PR,  
+
+412
+00:47:13,710 --> 00:47:20,310
+if you don't have permissions or your repo set up 
+in a certain way, then you might have to resolve  
+
+413
+00:47:20,310 --> 00:47:27,510
+comments before you can merge. Anyway, I'm just 
+going to merge here, confirm and merge successful.  
+
+414
+00:47:28,910 --> 00:47:36,920
+Now that the PR is merged, I'm going to go over 
+to the code. And if I scroll down, you can see  
+
+415
+00:47:36,920 --> 00:47:44,300
+that I am on the master branch. And my changes 
+are also here. So the branch was successfully  
+
+416
+00:47:44,300 --> 00:47:50,960
+merged. So locally, now I'm going to switch to 
+the master branch. And if you look at the code,  
+
+417
+00:47:50,960 --> 00:47:57,350
+the changes aren't there yet. And that's because 
+they are only on GitHub, and I need to pull them  
+
+418
+00:47:57,350 --> 00:48:04,790
+down to my local environment. So to get the 
+changes on my local master branch from origin,  
+
+419
+00:48:04,790 --> 00:48:11,180
+I'm going to do Git pull. Now, if I didn't already 
+set the upstream, I would have to do Git pull  
+
+420
+00:48:11,180 --> 00:48:17,330
+origin master. But I already have an upstream 
+set here. So I'm just going to do Git pull,  
+
+421
+00:48:17,330 --> 00:48:25,250
+and then enter. And you can see one file changed 
+for insertions. And now if I look at my code,  
+
+422
+00:48:25,250 --> 00:48:31,850
+I can see my local master has also been updated 
+with the changes from the branch. And now that I  
+
+423
+00:48:31,850 --> 00:48:39,350
+am done with that feature branch, I'm going to do 
+git branch. And it's still there, even though I'm  
+
+424
+00:48:39,350 --> 00:48:44,840
+not going to be using it again, because you don't 
+really reuse branches that you've already merged  
+
+425
+00:48:44,840 --> 00:48:51,680
+into your master branch. So I'm going to go ahead 
+and delete this branch. So I'm going to do git  
+
+426
+00:48:51,680 --> 00:48:59,990
+branch, dash D, and then the name of the branch. 
+And again, I can tab over. So I'll hit Enter. And  
+
+427
+00:48:59,990 --> 00:49:06,350
+now it says I deleted that branch. So now if 
+I do git branch, and I only have master again,  
+
+428
+00:49:06,350 --> 00:49:12,770
+alright, well, that's all fine and great and works 
+well. But in real life, you're not always going to  
+
+429
+00:49:12,770 --> 00:49:20,000
+have such an easy time merging. There's something 
+called merge conflicts in git, where basically,  
+
+430
+00:49:20,000 --> 00:49:26,030
+you're building your own code writing a bunch of 
+code on your own branch. Maybe other people are  
+
+431
+00:49:26,030 --> 00:49:31,160
+writing code on their branches. And master is 
+getting updated from multiple different places.  
+
+432
+00:49:31,160 --> 00:49:38,930
+So it's possible for multiple people to change 
+the same files. And so sometimes Git doesn't  
+
+433
+00:49:38,930 --> 00:49:44,590
+know which code you want to keep, or which code is 
+redundant, or which code you want to get rid of.  
+
+434
+00:49:44,590 --> 00:49:52,030
+So you'll have to manually do that. Let's try that 
+out. Let me create another branch. I'm going to do  
+
+435
+00:49:52,030 --> 00:49:58,900
+git checkout dash B. And then I'm just going to 
+call this quick test. Alright, I'm on the quick  
+
+436
+00:49:58,900 --> 00:50:08,500
+test branch. Now I'm going to come into index dot 
+HTML. And I'm going to add a p tag here, and say  
+
+437
+00:50:08,500 --> 00:50:19,060
+world. And P. Alright, so I modified this file, 
+let me go ahead and do git status, it's always  
+
+438
+00:50:19,060 --> 00:50:24,940
+a good idea to do git status before you commit 
+anything looks good. What I can also do from here  
+
+439
+00:50:24,940 --> 00:50:32,800
+is do a git diff, enter, and it shows me all of 
+the changes that I've made since my last commit.  
+
+440
+00:50:32,800 --> 00:50:41,410
+So I'm going to hit Q, and now I will commit 
+these. Now generally, the workflow has been git  
+
+441
+00:50:41,410 --> 00:50:48,280
+add, and then file name or period dad, everything 
+in this directory. This time, there's a shortcut,  
+
+442
+00:50:48,280 --> 00:50:55,480
+because we've just modified one file. And the file 
+has already been committed to get in the past,  
+
+443
+00:50:55,480 --> 00:51:02,050
+which is why it says modified and not created. 
+So what I'm going to do is git commit. And then  
+
+444
+00:51:02,050 --> 00:51:09,610
+instead of dash m, I'm going to do dash A, which 
+stands for ad and M at the same time for message,  
+
+445
+00:51:09,610 --> 00:51:15,850
+then I'm going to put my commit message. So this 
+basically adds and commits at the same time. But  
+
+446
+00:51:15,850 --> 00:51:22,600
+it only works for modified files, not for newly 
+created files. Because if it's newly created,  
+
+447
+00:51:22,600 --> 00:51:28,510
+you have to stage that with Git and let get know 
+about it first. For my message, I'll just say  
+
+448
+00:51:28,510 --> 00:51:37,630
+added world. Okay, and now I have one file changed 
+to insertions. Now let me go to my master branch  
+
+449
+00:51:37,630 --> 00:51:44,260
+git checkout Master, you can see I don't have the 
+changes from my other branch there. But what if I  
+
+450
+00:51:44,260 --> 00:51:50,080
+updated the same line, so on Master, now I'm 
+updating line two. And here I'm going to put  
+
+451
+00:51:50,080 --> 00:51:57,520
+there so hello there. So now master has aligned to 
+but the new branch I created also has aligned to  
+
+452
+00:51:57,520 --> 00:52:02,800
+now everything is fine. Now because both branches 
+are separate. But what if I try to merge these two  
+
+453
+00:52:02,800 --> 00:52:11,620
+together, whose line two is going to be put there. 
+So let's try that. I'm going to go to my quick  
+
+454
+00:52:11,620 --> 00:52:19,120
+test branch. So I'm going to do git checkout. 
+quick test. And now it's actually giving me an  
+
+455
+00:52:19,120 --> 00:52:26,710
+error and not letting me change branches. Because 
+I have local changes that line to that I added in  
+
+456
+00:52:26,710 --> 00:52:34,090
+Master, it says it's going to be overwritten if 
+I change branches. So it's asking me to commit  
+
+457
+00:52:34,090 --> 00:52:41,380
+before I change, so that way that line two will 
+be saved to get in the master branch, and won't  
+
+458
+00:52:41,380 --> 00:52:46,330
+be lost when I change branches. Now stashing is 
+a little bit beyond the scope of this tutorial.  
+
+459
+00:52:46,330 --> 00:52:53,920
+But it's basically a way for you to stash your 
+changes somewhere. And then you can retrieve  
+
+460
+00:52:53,920 --> 00:53:02,050
+them later. But it's not making a commit to get. 
+It's like a temporary holding place. So we're not  
+
+461
+00:53:02,050 --> 00:53:08,140
+going to do that, I'm just going to go ahead and 
+commit. So let me do git status first. All right,  
+
+462
+00:53:08,140 --> 00:53:13,060
+and I'm going to use the shorthand because I only 
+have the modified file there. So I'm going to do  
+
+463
+00:53:13,060 --> 00:53:22,390
+git commit dash AM, and then a commit message, 
+I'm going to say added there. And now I should  
+
+464
+00:53:22,390 --> 00:53:27,700
+be able to check out and press the up arrow 
+key, I should be able to check out this quick  
+
+465
+00:53:27,700 --> 00:53:34,690
+test branch. And before I merge master into 
+this branch, I'm going to diff against master  
+
+466
+00:53:34,690 --> 00:53:42,670
+real quick. And it shows me the changes here. So 
+now I'm going to do merge, Master. So remember  
+
+467
+00:53:42,670 --> 00:53:50,410
+how I said before that merging locally wasn't 
+the regular pattern. While it isn't for merging  
+
+468
+00:53:50,410 --> 00:53:58,330
+branches into master. But Master gets updated as 
+you go along as you're working on your project,  
+
+469
+00:53:58,330 --> 00:54:03,730
+because maybe other people are merging into master 
+and you don't have those changes in your branch.  
+
+470
+00:54:03,730 --> 00:54:08,560
+But you don't want to get too far behind the 
+master as you're working because then it's  
+
+471
+00:54:08,560 --> 00:54:15,400
+going to be really difficult to merge later. So 
+as changes are made to master in the GitHub repo,  
+
+472
+00:54:15,400 --> 00:54:21,310
+you're going to want to pull those down to your 
+local master branch. And then whatever feature  
+
+473
+00:54:21,310 --> 00:54:28,360
+branch you're working off of like quick test here, 
+you'll want to use Git merge master to keep your  
+
+474
+00:54:28,360 --> 00:54:34,720
+branch up to date with what's going on in master. 
+So that's what we're doing here. Git merge Master,  
+
+475
+00:54:34,720 --> 00:54:43,270
+hit Enter. And now it says we have a conflict. 
+So we have a merge conflict in index dot HTML. So  
+
+476
+00:54:43,270 --> 00:54:49,360
+there are a couple of ways to fix merge conflicts. 
+interfaces like GitHub, give you an interface to  
+
+477
+00:54:49,360 --> 00:54:56,050
+fix them. You can also fix it in the terminal. 
+But the easiest way to fix merge conflicts is  
+
+478
+00:54:56,050 --> 00:55:02,830
+directly in your code. A nice code editor like vi 
+code will let you click buttons like accept the  
+
+479
+00:55:02,830 --> 00:55:08,410
+current change or accept incoming or take both 
+of these. But you can also come in here, make  
+
+480
+00:55:08,410 --> 00:55:14,560
+the changes that you want and delete these lines 
+that get added this, let's get know that there's  
+
+481
+00:55:14,560 --> 00:55:22,600
+a conflict. And first between this head and these 
+equal signs, it shows the code that we have on the  
+
+482
+00:55:22,600 --> 00:55:29,020
+current branch that we are on. And then it shows 
+the code coming from the other branch that we're  
+
+483
+00:55:29,020 --> 00:55:37,420
+trying to merge in. So in this case, I am just 
+going to delete these lines and save both of the  
+
+484
+00:55:37,420 --> 00:55:42,760
+changes. But in this case, one, two, line two and 
+one, two, line three. And this is just letting get  
+
+485
+00:55:42,760 --> 00:55:48,790
+know what we want to do, because it didn't know 
+how to handle the conflict. Now we have handled it  
+
+486
+00:55:48,790 --> 00:55:55,240
+and deleted the conflict markers, we can now look 
+here and see that we need to make another commit,  
+
+487
+00:55:55,240 --> 00:56:00,670
+even though it seems like we are adding and 
+subtracting the same things, we basically  
+
+488
+00:56:00,670 --> 00:56:06,970
+need to make a commit because we have fixed the 
+merge conflicts. So I'm going to say here, git  
+
+489
+00:56:06,970 --> 00:56:17,830
+commit dash a m, and I can say merged in Master, 
+or updated with Master or something like that.  
+
+490
+00:56:17,830 --> 00:56:23,350
+And now I've officially updated my branch with the 
+changes that have been happening on master branch,  
+
+491
+00:56:23,350 --> 00:56:28,900
+and I can continue coding whatever feature bug fix 
+or whatever I'm doing on this quick test branch.  
+
+492
+00:56:32,170 --> 00:56:37,810
+So what if we make a mistake? What if we 
+accidentally add something or commit something to  
+
+493
+00:56:37,810 --> 00:56:45,670
+get, and we didn't mean to do it, we can actually 
+undo our stages or our commits. So let me come to  
+
+494
+00:56:45,670 --> 00:56:53,590
+read me, I'm going to add another line here. And 
+say, have fun. Okay, so I've made a change here on  
+
+495
+00:56:53,590 --> 00:57:02,770
+line 12. And back in my demo rebill, I'm going to 
+do git status. So now let's say I want to git add  
+
+496
+00:57:02,770 --> 00:57:10,390
+this README. And let me do git status again, and 
+you can see before is that change is not staged,  
+
+497
+00:57:10,390 --> 00:57:16,900
+and now changes to be committed, meaning they've 
+been staged already. But what if I want to undo  
+
+498
+00:57:16,900 --> 00:57:22,630
+staging, what if I didn't mean to stage this 
+file, I can actually easily undo it by using the  
+
+499
+00:57:22,630 --> 00:57:29,650
+Git reset command. So I can either do Git reset 
+with no arguments, or I can say Git reset, and  
+
+500
+00:57:29,650 --> 00:57:36,580
+just the name of the file that I want to onstage. 
+So here, I'm just gonna do the plain Git reset,  
+
+501
+00:57:36,580 --> 00:57:44,140
+and it gives me a list of the files. So unstaged 
+changes after reset README. Now, if I do another  
+
+502
+00:57:44,140 --> 00:57:51,850
+git status, it shows me that this file is no 
+longer staged. So what if I want to undo a commit,  
+
+503
+00:57:51,850 --> 00:58:01,360
+so let me go ahead and add the readme file. And 
+then I'm going to come and commit, read me, and  
+
+504
+00:58:01,360 --> 00:58:09,520
+I'm going to say added install step. Now, if I do 
+git status, you'll see there's nothing to commit,  
+
+505
+00:58:09,520 --> 00:58:14,860
+because all changes have now been committed. Well, 
+if I made a mistake on that commit, I can use that  
+
+506
+00:58:14,860 --> 00:58:23,920
+same Git reset command. And this time, I'm going 
+to say Git reset head in all caps. And what head  
+
+507
+00:58:23,920 --> 00:58:29,050
+means to get is a pointer to the last commit. 
+So I'm telling it to do something with the last  
+
+508
+00:58:29,050 --> 00:58:36,100
+commit. And then I'm going to save till the one, 
+which is telling Git instead of pointing to this  
+
+509
+00:58:36,100 --> 00:58:41,410
+last commit that I just made, right here, 
+I want you to go back one commit further,  
+
+510
+00:58:41,410 --> 00:58:48,340
+and head will now point back one commit further 
+meaning it will completely undo the commit that  
+
+511
+00:58:48,340 --> 00:58:54,970
+I just made. Let me click Enter. And now you 
+can see it says I unstaged, the changes. So  
+
+512
+00:58:54,970 --> 00:59:01,660
+I'm going to say git status. And what happened 
+was that it unstaged and uncommitted, those last  
+
+513
+00:59:01,660 --> 00:59:09,400
+changes. So if I do git diff, you'll see that 
+Git picks this up as a new change now. Now,  
+
+514
+00:59:09,400 --> 00:59:15,250
+if you have many different commits, you might 
+want to go back to a specific commit or undo  
+
+515
+00:59:15,250 --> 00:59:22,630
+multiple commits. And for that there's no quick 
+pointer in Git like the uppercase head pointer,  
+
+516
+00:59:22,630 --> 00:59:28,720
+where you can just look at the last commit or 
+use that to undo the last commit. But you can  
+
+517
+00:59:28,720 --> 00:59:35,410
+see a log of all your commits. And you'll see that 
+these are arranged in reverse chronological order.  
+
+518
+00:59:35,410 --> 00:59:41,650
+So this is the latest commit that we made. And 
+you can see with the commit message, that's also  
+
+519
+00:59:41,650 --> 00:59:47,110
+why it's important to write a good commit message 
+because it's easier for humans to scroll through  
+
+520
+00:59:47,110 --> 00:59:54,460
+and see which commit is which to get these commits 
+are differentiated with this unique hash here. So  
+
+521
+00:59:54,460 --> 01:00:01,120
+if you want to go back to a certain commit, you 
+can copy one of these hashes. Let's say I want  
+
+522
+01:00:01,120 --> 01:00:08,200
+to go back to added world before I added the 
+there line. So I want to basically undo when I  
+
+523
+01:00:08,200 --> 01:00:16,360
+merged this there, from Master into this branch. 
+So let me copy this commit hash. And by the way,  
+
+524
+01:00:16,360 --> 01:00:22,000
+when you see all of these commits, you can scroll 
+down with spacebar, and now it shows this as the  
+
+525
+01:00:22,000 --> 01:00:29,440
+end. So I'll say quit. So I'm going to do Git 
+reset, and then the hash of that commit. And  
+
+526
+01:00:29,440 --> 01:00:37,630
+it's unstaged, any changes made to these files 
+after this commit. So you can see the changes  
+
+527
+01:00:37,630 --> 01:00:46,060
+are still there. I added have fun and this line 
+three in the index dot HTML, but they are just  
+
+528
+01:00:46,060 --> 01:00:51,790
+not saved in Git or stage with Git any longer. 
+So what if I was just testing something out,  
+
+529
+01:00:51,790 --> 01:00:59,350
+and I want to get rid of all of the changes after 
+a certain point? Well, I can do that by using  
+
+530
+01:00:59,350 --> 01:01:07,900
+the Git reset command as well. Let me just grab a 
+commit hash. So I'm going to go back just a couple  
+
+531
+01:01:07,900 --> 01:01:16,210
+of random commits to this commit right here, where 
+I said updated README, can I hit Q. And now I'm  
+
+532
+01:01:16,210 --> 01:01:24,100
+going to do Git reset dash dash hard, meaning I 
+want all of the changes to not just be unstaged,  
+
+533
+01:01:24,100 --> 01:01:30,580
+but to be completely removed. So head is now 
+pointing to a different commit, because I've  
+
+534
+01:01:30,580 --> 01:01:36,910
+undone several commits now. And if I look at my 
+files, we've just completely gone back in time and  
+
+535
+01:01:36,910 --> 01:01:45,640
+erased the latest updates. So those are the basics 
+of branching, merging, fixing merge conflicts,  
+
+536
+01:01:45,640 --> 01:01:53,200
+and undoing staging and commits that you've made. 
+One more thing that I want to quickly mention is  
+
+537
+01:01:53,200 --> 01:01:58,930
+forking, you may have seen this already in 
+the Git interface, you can hit fork here,  
+
+538
+01:01:58,930 --> 01:02:06,190
+and then it's going to make a complete copy of the 
+repository. Now, why would you want to fork? Well,  
+
+539
+01:02:06,190 --> 01:02:10,990
+you probably don't want to fork your own repo 
+because you already have full access to all of the  
+
+540
+01:02:10,990 --> 01:02:20,440
+code here, but you don't for other people's repos. 
+So let me find just a random repo on GitHub. Okay,  
+
+541
+01:02:20,440 --> 01:02:27,760
+so here's view, j, s. So let me click on this. And 
+I actually don't have access to change anything  
+
+542
+01:02:27,760 --> 01:02:34,990
+in this repo. So if I want to make a PR against 
+this repo, and request for my changes to be added,  
+
+543
+01:02:34,990 --> 01:02:43,120
+or if I just want to be able to branch off of the 
+code in this repo and do whatever I want with it,  
+
+544
+01:02:43,120 --> 01:02:51,990
+then I want to fork it. So I'm going to hit the 
+fork button here and fork it to my user account.  
+
+545
+01:02:51,990 --> 01:02:58,710
+These are just groups that I'm a part of on 
+GitHub. Sometimes it takes a minute to fork  
+
+546
+01:02:58,710 --> 01:03:05,400
+over all the code, especially with Vue JS because 
+it's a large repository. Alright. And now you can  
+
+547
+01:03:05,400 --> 01:03:13,410
+see the repo is no longer under the View, j. s 
+organization. Now it's under my personal GitHub.  
+
+548
+01:03:13,410 --> 01:03:19,170
+And now that I've forked this, I have complete 
+control to make any updates or changes that I  
+
+549
+01:03:19,170 --> 01:03:28,440
+want to this code. So if I want to come in to read 
+me, and hit the pencil, update this, I can say, Hi  
+
+550
+01:03:28,440 --> 01:03:36,120
+there. And now I can come to the bottom and commit 
+changes again. So I can say, updated README or  
+
+551
+01:03:36,120 --> 01:03:41,790
+whatever I want, I'm just going to leave it with 
+the default text, again, commit to the dev branch.  
+
+552
+01:03:41,790 --> 01:03:49,140
+So before we worked off the master branch as being 
+the default branch, but sometimes when you're  
+
+553
+01:03:49,140 --> 01:03:55,620
+working in a larger project with other people, 
+you're going to want to create multiple branches,  
+
+554
+01:03:55,620 --> 01:04:02,880
+like master staging, and dev for different kinds 
+of environments. So in this case, Dev is set to  
+
+555
+01:04:02,880 --> 01:04:08,400
+the default branch for this repository, instead 
+of master. So I'm just going to commit my changes  
+
+556
+01:04:08,400 --> 01:04:16,980
+directly to Dev. And you can see my changes here. 
+Of course, they aren't part of the main view j s  
+
+557
+01:04:16,980 --> 01:04:23,910
+view repository, but they're part of the one that 
+I forked because I forked a complete copy of that  
+
+558
+01:04:23,910 --> 01:04:31,650
+repository, including the branches associated with 
+it. And you can see dev is marked as the default.  
+
+559
+01:04:31,650 --> 01:04:40,080
+So now what if I wanted to get my changes back 
+into this Vue JS repository? Of course I don't,  
+
+560
+01:04:40,080 --> 01:04:48,240
+but what if I did, I would go and create a pull 
+request. So new pull request, and then as my base  
+
+561
+01:04:48,240 --> 01:04:54,570
+the place that I want to merge my changes into I 
+would put the repository that I forked from this  
+
+562
+01:04:54,570 --> 01:05:02,340
+Vue JS repository, and the branch and I want to 
+compare that with My repository that I forked  
+
+563
+01:05:02,340 --> 01:05:07,690
+and the branch on my repository that I updated, 
+of course, I'm not going to click Create pull  
+
+564
+01:05:07,690 --> 01:05:14,230
+request, because this is just a demo, I can also 
+see the diff down here of the changes that have  
+
+565
+01:05:14,230 --> 01:05:20,590
+made and what commits I've made to this branch on 
+my fork. Now, if I want to merge within my fork,  
+
+566
+01:05:20,590 --> 01:05:26,170
+I can do that easily. Let's say, of course, there 
+isn't anything to compare because I'm comparing  
+
+567
+01:05:26,170 --> 01:05:33,610
+the same branch here. But I could merge into any 
+other branch. Let me find master here. So I could  
+
+568
+01:05:33,610 --> 01:05:40,390
+merge straight into master. And you can see I 
+can create pull requests. Now, I created a pull  
+
+569
+01:05:40,390 --> 01:05:49,520
+request. And I'm going to create pull request. 
+And you can see they had a bunch of default text  
+
+570
+01:05:49,520 --> 01:05:58,640
+added to the pull request information. But I'm 
+just going to go ahead and merge. Go back to the  
+
+571
+01:05:58,640 --> 01:06:06,890
+code. If I scroll down, of course, I'm on Dev, 
+it says hi there. And now if I go to master,  
+
+572
+01:06:06,890 --> 01:06:14,960
+it also has my changes on master because I merged 
+them. Generally speaking, after we merge a branch  
+
+573
+01:06:14,960 --> 01:06:21,920
+into one of our default branches like Master, 
+then we would clean up the branch that has just  
+
+574
+01:06:21,920 --> 01:06:26,270
+been merged. In other words, we would delete 
+it from GitHub and from our local machine,  
+
+575
+01:06:26,270 --> 01:06:32,030
+because we're not using that branch anymore. But 
+it's a little bit different when we use branches  
+
+576
+01:06:32,030 --> 01:06:38,750
+like Dev, staging and master, because generally, 
+you're merging your feature branches into either  
+
+577
+01:06:38,750 --> 01:06:45,830
+dev or master. And you have Dev and master and 
+sometimes staging reserved for just merging into  
+
+578
+01:06:45,830 --> 01:06:51,920
+so you don't make any changes on Dev and master 
+themselves. You'll just be merging other branches  
+
+579
+01:06:51,920 --> 01:06:58,610
+into dev or Master, depending on how your codebase 
+is set up. In a large project like Vue js,  
+
+580
+01:06:58,610 --> 01:07:05,210
+we would merge all of our feature branches or bug 
+fixes or whatever into the dev branch and then  
+
+581
+01:07:05,210 --> 01:07:10,730
+delete the branch that we just merged in. And then 
+when all the changes on the dev branch are ready,  
+
+582
+01:07:10,730 --> 01:07:16,430
+those get merged into master. But dev never gets 
+deleted, just like master never gets deleted,  
+
+583
+01:07:16,430 --> 01:07:22,010
+those kind of stay around forever. All the other 
+branches are just temporary. So me having my own  
+
+584
+01:07:22,010 --> 01:07:29,630
+fork allows me full rein, full access, full 
+control of CRUD operations, create, read,  
+
+585
+01:07:29,630 --> 01:07:34,970
+update, delete whatever I want to do with all 
+of this code, all of these files. And if I want  
+
+586
+01:07:34,970 --> 01:07:40,490
+to make some major updates, what I'm going to 
+do is fork the repository, which I already did,  
+
+587
+01:07:40,490 --> 01:07:47,300
+pull my fork down to my local machine, make all 
+the updates that I want to test them out whatever  
+
+588
+01:07:47,300 --> 01:07:54,590
+I want to do, I'll push them back up to my fork, 
+and then I will create a PR against the original  
+
+589
+01:07:54,590 --> 01:08:00,380
+repository. Thanks so much for watching. I hope 
+that you enjoyed this video and that you also got  
+
+590
+01:08:00,380 --> 01:08:05,390
+something out of it. If you did, then don't forget 
+to like the video and subscribe to the Free Code  
+
+591
+01:08:05,390 --> 01:08:11,360
+Camp channel. Don't forget to check out my YouTube 
+channel called Faraday Academy where I do weekly  
+
+592
+01:08:11,360 --> 01:08:18,350
+videos and livestreams on Python and JavaScript 
+and other related programming topics. I would  
+
+593
+01:08:18,350 --> 01:08:22,490
+also appreciate if you would leave me a comment 
+here and let me know what you liked about the  
+
+594
+01:08:22,490 --> 01:08:28,970
+video or any other feedback that you might have. 
+Have a great day and I hope you enjoy using it
+

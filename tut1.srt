@@ -1,0 +1,2632 @@
+1
+00:00:00,030 --> 00:00:02,100
+hey guys in this crash course we're
+
+2
+00:00:02,100 --> 00:00:04,319
+going to take a look at git now by no
+
+3
+00:00:04,319 --> 00:00:06,839
+means is this a complete in-depth course
+
+4
+00:00:06,839 --> 00:00:08,069
+where we're going to go over every
+
+5
+00:00:08,069 --> 00:00:10,710
+command in every situation this is meant
+
+6
+00:00:10,710 --> 00:00:12,710
+to be a no nonsense guide for beginners
+
+7
+00:00:12,710 --> 00:00:15,690
+so either new or intermediate
+
+8
+00:00:15,690 --> 00:00:18,210
+programmers or developers that either
+
+9
+00:00:18,210 --> 00:00:21,449
+don't know what git is or have used it
+
+10
+00:00:21,449 --> 00:00:23,699
+briefly but still don't really grasp the
+
+11
+00:00:23,699 --> 00:00:25,769
+full concept alright so we're going to
+
+12
+00:00:25,769 --> 00:00:27,539
+start out with a couple slides and then
+
+13
+00:00:27,539 --> 00:00:29,849
+we'll jump in and we'll look at some of
+
+14
+00:00:29,849 --> 00:00:31,710
+the most important commands for you to
+
+15
+00:00:31,710 --> 00:00:35,250
+know all right so let's talk about what
+
+16
+00:00:35,250 --> 00:00:37,739
+git is it's a version control system for
+
+17
+00:00:37,739 --> 00:00:40,530
+tracking changes in computer files all
+
+18
+00:00:40,530 --> 00:00:42,600
+right so it was initially created in
+
+19
+00:00:42,600 --> 00:00:46,020
+2005 by Linus Torvalds who was also the
+
+20
+00:00:46,020 --> 00:00:49,200
+creator of Linux there's no specific
+
+21
+00:00:49,200 --> 00:00:51,989
+language or framework or anything that
+
+22
+00:00:51,989 --> 00:00:54,449
+you need to use git you can use it for
+
+23
+00:00:54,449 --> 00:00:58,410
+static HTML web sites no js' apps Python
+
+24
+00:00:58,410 --> 00:01:01,079
+Java c-sharp anything at all it just
+
+25
+00:01:01,079 --> 00:01:04,580
+stores files so git is a distributed
+
+26
+00:01:04,580 --> 00:01:07,860
+version control system or decentralized
+
+27
+00:01:07,860 --> 00:01:10,110
+version control system and what that
+
+28
+00:01:10,110 --> 00:01:12,540
+means is that many developers can work
+
+29
+00:01:12,540 --> 00:01:15,000
+on a single project without having to be
+
+30
+00:01:15,000 --> 00:01:15,930
+on the same network
+
+31
+00:01:15,930 --> 00:01:18,390
+okay so there's also version control
+
+32
+00:01:18,390 --> 00:01:20,939
+systems that developers actually need to
+
+33
+00:01:20,939 --> 00:01:23,340
+be on the same network to use that's not
+
+34
+00:01:23,340 --> 00:01:26,220
+what git is distributed or decentralized
+
+35
+00:01:26,220 --> 00:01:29,520
+okay get coordinates work between
+
+36
+00:01:29,520 --> 00:01:31,770
+multiple developers and attracts every
+
+37
+00:01:31,770 --> 00:01:33,930
+single version and every single change
+
+38
+00:01:33,930 --> 00:01:38,070
+that's made on the system or on the in
+
+39
+00:01:38,070 --> 00:01:40,950
+the project you can also revert back to
+
+40
+00:01:40,950 --> 00:01:42,960
+specific versions of any file at any
+
+41
+00:01:42,960 --> 00:01:45,299
+time as long as it was committed to the
+
+42
+00:01:45,299 --> 00:01:48,210
+repository usually when you use git
+
+43
+00:01:48,210 --> 00:01:50,100
+you'll have a repository on your local
+
+44
+00:01:50,100 --> 00:01:52,140
+machine that you work on you make
+
+45
+00:01:52,140 --> 00:01:55,229
+changes and then you upload it to or you
+
+46
+00:01:55,229 --> 00:01:57,869
+push it to a remote repository okay so
+
+47
+00:01:57,869 --> 00:02:00,869
+something like github or bitbucket and
+
+48
+00:02:00,869 --> 00:02:03,329
+then you can push you can push your
+
+49
+00:02:03,329 --> 00:02:06,719
+local repository to the remote one you
+
+50
+00:02:06,719 --> 00:02:08,068
+don't need an internet connection to
+
+51
+00:02:08,068 --> 00:02:11,730
+work on a repository locally and you can
+
+52
+00:02:11,730 --> 00:02:13,620
+make changes but if you want to push it
+
+53
+00:02:13,620 --> 00:02:15,870
+the remote repository you will need an
+
+54
+00:02:15,870 --> 00:02:19,110
+internet connection all right so let's
+
+55
+00:02:19,110 --> 00:02:21,090
+quickly look at some of the concepts of
+
+56
+00:02:21,090 --> 00:02:23,849
+git so it essentially keeps track of
+
+57
+00:02:23,849 --> 00:02:26,159
+your code history with snapshots of your
+
+58
+00:02:26,159 --> 00:02:28,170
+files alright so you make these
+
+59
+00:02:28,170 --> 00:02:31,140
+snapshots by making a commitment amande
+
+60
+00:02:31,140 --> 00:02:33,750
+and you can always go back to see any
+
+61
+00:02:33,750 --> 00:02:37,260
+snapshot of previously written code and
+
+62
+00:02:37,260 --> 00:02:38,849
+like I said you can always revert back
+
+63
+00:02:38,849 --> 00:02:42,540
+if you need to so your code is extremely
+
+64
+00:02:42,540 --> 00:02:45,180
+safe when you're working with git you
+
+65
+00:02:45,180 --> 00:02:46,650
+can put your code in a staging area
+
+66
+00:02:46,650 --> 00:02:48,629
+before actually doing the commit and
+
+67
+00:02:48,629 --> 00:02:51,060
+writing to the snapshot this is done
+
+68
+00:02:51,060 --> 00:02:54,060
+with a simple add command ok and I'll go
+
+69
+00:02:54,060 --> 00:02:57,329
+over all the important commands once you
+
+70
+00:02:57,329 --> 00:02:59,340
+make a commit to a remote repository
+
+71
+00:02:59,340 --> 00:03:01,769
+other developers can then pull that
+
+72
+00:03:01,769 --> 00:03:04,470
+information onto their machines ok so
+
+73
+00:03:04,470 --> 00:03:06,750
+you can create you can also create
+
+74
+00:03:06,750 --> 00:03:09,150
+branches but we'll get into that in a
+
+75
+00:03:09,150 --> 00:03:11,459
+little bit all right I'm trying to just
+
+76
+00:03:11,459 --> 00:03:14,280
+really stick to the basics here ok so
+
+77
+00:03:14,280 --> 00:03:16,440
+let's look at the basic commands that
+
+78
+00:03:16,440 --> 00:03:19,769
+you'll need to learn so get in it will
+
+79
+00:03:19,769 --> 00:03:22,200
+initialize a git repository so you go
+
+80
+00:03:22,200 --> 00:03:24,480
+into a folder via your command line or
+
+81
+00:03:24,480 --> 00:03:27,060
+terminal and you do get an it and it
+
+82
+00:03:27,060 --> 00:03:30,150
+will create a dot git folder in that in
+
+83
+00:03:30,150 --> 00:03:32,069
+that project ok and it's hidden by
+
+84
+00:03:32,069 --> 00:03:34,620
+default you almost never need to go into
+
+85
+00:03:34,620 --> 00:03:36,829
+this folder at least I never have
+
+86
+00:03:36,829 --> 00:03:38,970
+alright and then once you initialize
+
+87
+00:03:38,970 --> 00:03:41,819
+that folder as a repository you can then
+
+88
+00:03:41,819 --> 00:03:44,250
+start to run other commands all right so
+
+89
+00:03:44,250 --> 00:03:47,160
+get add we'll add the file or files that
+
+90
+00:03:47,160 --> 00:03:49,889
+you specify to the staging area or the
+
+91
+00:03:49,889 --> 00:03:52,169
+index and they'll then be ready for
+
+92
+00:03:52,169 --> 00:03:55,019
+commit you can run this command as many
+
+93
+00:03:55,019 --> 00:03:56,730
+times as you need to before committing
+
+94
+00:03:56,730 --> 00:03:59,099
+and it'll just keep the files in that
+
+95
+00:03:59,099 --> 00:04:02,699
+staging area so if you want to see what
+
+96
+00:04:02,699 --> 00:04:05,010
+you have in the staging area and ready
+
+97
+00:04:05,010 --> 00:04:06,810
+for commit you can just use git status
+
+98
+00:04:06,810 --> 00:04:09,560
+and that will display paths that have
+
+99
+00:04:09,560 --> 00:04:11,760
+display the differences between the
+
+100
+00:04:11,760 --> 00:04:13,980
+working tree and then the staging area
+
+101
+00:04:13,980 --> 00:04:18,539
+or the index all right so when you're
+
+102
+00:04:18,539 --> 00:04:21,599
+ready you can go ahead and commit your
+
+103
+00:04:21,599 --> 00:04:24,960
+files so you run git commit and I'll
+
+104
+00:04:24,960 --> 00:04:26,669
+take everything that's in the index of
+
+105
+00:04:26,669 --> 00:04:26,970
+the state
+
+106
+00:04:26,970 --> 00:04:29,040
+aging area and put it into the local
+
+107
+00:04:29,040 --> 00:04:32,550
+repository there's also some important
+
+108
+00:04:32,550 --> 00:04:34,500
+flags that you need to know are options
+
+109
+00:04:34,500 --> 00:04:35,910
+that you need to know with get commit
+
+110
+00:04:35,910 --> 00:04:38,270
+but I'll get into those a little later
+
+111
+00:04:38,270 --> 00:04:41,100
+all right so the next three commands
+
+112
+00:04:41,100 --> 00:04:42,540
+that I'm going to show you have to do
+
+113
+00:04:42,540 --> 00:04:44,820
+with remote repositories so if you're
+
+114
+00:04:44,820 --> 00:04:46,730
+working with github or bitbucket
+
+115
+00:04:46,730 --> 00:04:49,530
+something like that okay so get push
+
+116
+00:04:49,530 --> 00:04:51,600
+will take you a local repository that
+
+117
+00:04:51,600 --> 00:04:54,630
+you've created and then push it to a
+
+118
+00:04:54,630 --> 00:04:57,780
+remote repository such as github you
+
+119
+00:04:57,780 --> 00:05:01,020
+will have to add for instance github or
+
+120
+00:05:01,020 --> 00:05:03,570
+another remote service you'll have to
+
+121
+00:05:03,570 --> 00:05:05,070
+add that and you have to add your
+
+122
+00:05:05,070 --> 00:05:06,900
+credentials so it'll ask for your
+
+123
+00:05:06,900 --> 00:05:09,330
+password and so on you can also create
+
+124
+00:05:09,330 --> 00:05:12,600
+SSH keys with github so that you don't
+
+125
+00:05:12,600 --> 00:05:14,370
+have to add passwords or anything like
+
+126
+00:05:14,370 --> 00:05:19,169
+that so if you want to pull the latest
+
+127
+00:05:19,169 --> 00:05:21,330
+changes from a remote repository you can
+
+128
+00:05:21,330 --> 00:05:23,460
+just do get pull all right so if someone
+
+129
+00:05:23,460 --> 00:05:25,410
+makes a change and you want the latest
+
+130
+00:05:25,410 --> 00:05:27,390
+version you can use pulp
+
+131
+00:05:27,390 --> 00:05:30,150
+use the poll come in and then get cloned
+
+132
+00:05:30,150 --> 00:05:32,880
+will copy a remote repository into your
+
+133
+00:05:32,880 --> 00:05:36,090
+current folder so if you find a program
+
+134
+00:05:36,090 --> 00:05:38,610
+or a project or module that you like on
+
+135
+00:05:38,610 --> 00:05:41,310
+github you can simply clone it and
+
+136
+00:05:41,310 --> 00:05:45,390
+that'll download a TM machine so
+
+137
+00:05:45,390 --> 00:05:48,060
+installing it is pretty easy no matter
+
+138
+00:05:48,060 --> 00:05:49,590
+what system you're using if you're using
+
+139
+00:05:49,590 --> 00:05:52,320
+Linux it's a simple package command for
+
+140
+00:05:52,320 --> 00:05:55,620
+Debian use apt-get for fedora use yum
+
+141
+00:05:55,620 --> 00:05:58,040
+and if you're on a Mac you can go to
+
+142
+00:05:58,040 --> 00:06:02,220
+this URL right here this get SCM and you
+
+143
+00:06:02,220 --> 00:06:05,010
+can download it I believe you can also
+
+144
+00:06:05,010 --> 00:06:07,700
+use homebrewer or some package manager
+
+145
+00:06:07,700 --> 00:06:09,540
+or something like that
+
+146
+00:06:09,540 --> 00:06:11,520
+and then for Windows there's a few
+
+147
+00:06:11,520 --> 00:06:13,080
+different programs you can use but I'd
+
+148
+00:06:13,080 --> 00:06:17,010
+always suggest this get - fcm comm you
+
+149
+00:06:17,010 --> 00:06:18,840
+can download the Installer and you can
+
+150
+00:06:18,840 --> 00:06:21,450
+set it up really easily so this also
+
+151
+00:06:21,450 --> 00:06:23,729
+comes with a tool called git bash which
+
+152
+00:06:23,729 --> 00:06:25,830
+is a command line tool and it gives you
+
+153
+00:06:25,830 --> 00:06:27,990
+a more Linux the environment on Windows
+
+154
+00:06:27,990 --> 00:06:31,140
+I almost always use that tool over the
+
+155
+00:06:31,140 --> 00:06:33,870
+standard Windows command line now that
+
+156
+00:06:33,870 --> 00:06:35,729
+there is graphical tools that you can
+
+157
+00:06:35,729 --> 00:06:38,070
+use where you don't need to use commands
+
+158
+00:06:38,070 --> 00:06:40,070
+but I would strongly recommend
+
+159
+00:06:40,070 --> 00:06:42,530
+then they use the commands because if
+
+160
+00:06:42,530 --> 00:06:45,530
+you only use the GUI GUI you're not
+
+161
+00:06:45,530 --> 00:06:47,480
+really learning anything you're not
+
+162
+00:06:47,480 --> 00:06:49,310
+really learning how git works under the
+
+163
+00:06:49,310 --> 00:06:52,010
+hood and if you end up somewhere where
+
+164
+00:06:52,010 --> 00:06:53,750
+you don't have that tool you're going to
+
+165
+00:06:53,750 --> 00:06:56,090
+be lost and it's not like it's really
+
+166
+00:06:56,090 --> 00:06:57,500
+hard if it was if it was really
+
+167
+00:06:57,500 --> 00:06:59,870
+difficult then maybe I'd say I'll use
+
+168
+00:06:59,870 --> 00:07:02,510
+that but it's not hard at all alright at
+
+169
+00:07:02,510 --> 00:07:04,130
+least for the basics it can get
+
+170
+00:07:04,130 --> 00:07:07,370
+complicated to really really know how it
+
+171
+00:07:07,370 --> 00:07:10,130
+works internally but for things that
+
+172
+00:07:10,130 --> 00:07:12,410
+you're going to need it for most likely
+
+173
+00:07:12,410 --> 00:07:14,120
+you're not going to need to know
+
+174
+00:07:14,120 --> 00:07:17,000
+everything ok that's pretty simple all
+
+175
+00:07:17,000 --> 00:07:18,470
+right so that's going to be it for the
+
+176
+00:07:18,470 --> 00:07:20,690
+slides let's go ahead and jump in and I
+
+177
+00:07:20,690 --> 00:07:22,220
+will show you how it works
+
+178
+00:07:22,220 --> 00:07:24,260
+all right so we're going to go ahead and
+
+179
+00:07:24,260 --> 00:07:26,750
+get started and install git now I'm in
+
+180
+00:07:26,750 --> 00:07:29,300
+Windows if you're on Windows or Mac you
+
+181
+00:07:29,300 --> 00:07:32,000
+want to go to get - SCM comm and if
+
+182
+00:07:32,000 --> 00:07:33,320
+you're on a Mac you can click on this
+
+183
+00:07:33,320 --> 00:07:36,200
+link right down here and that'll take
+
+184
+00:07:36,200 --> 00:07:38,960
+you to the download page for our Mac for
+
+185
+00:07:38,960 --> 00:07:41,150
+OSX but we're going to go ahead and
+
+186
+00:07:41,150 --> 00:07:43,490
+click download on Windows and that's
+
+187
+00:07:43,490 --> 00:07:47,330
+going to start the download and again if
+
+188
+00:07:47,330 --> 00:07:49,280
+you're on Linux you can use your app get
+
+189
+00:07:49,280 --> 00:07:51,950
+or your yum package manager whatever it
+
+190
+00:07:51,950 --> 00:07:56,810
+is you use ok so let's go ahead and open
+
+191
+00:07:56,810 --> 00:08:05,270
+this up and click yes so it's just a
+
+192
+00:08:05,270 --> 00:08:06,950
+winged standard Windows installer we're
+
+193
+00:08:06,950 --> 00:08:08,720
+just going to click through Program
+
+194
+00:08:08,720 --> 00:08:11,030
+Files is where it'll be stored you
+
+195
+00:08:11,030 --> 00:08:14,600
+choose the default for those now this
+
+196
+00:08:14,600 --> 00:08:16,580
+option here I always choose the last one
+
+197
+00:08:16,580 --> 00:08:19,610
+which is you get an optional UNIX tools
+
+198
+00:08:19,610 --> 00:08:21,770
+from the Windows command prompt so it
+
+199
+00:08:21,770 --> 00:08:23,690
+just gives us some extra commands to use
+
+200
+00:08:23,690 --> 00:08:26,510
+so I always choose that option and then
+
+201
+00:08:26,510 --> 00:08:28,550
+the rest of these line ending
+
+202
+00:08:28,550 --> 00:08:31,599
+conversions I'll just leave the default
+
+203
+00:08:31,599 --> 00:08:34,039
+terminal emulator we'll just use that
+
+204
+00:08:34,039 --> 00:08:37,789
+default and we'll keep an able
+
+205
+00:08:37,789 --> 00:08:41,169
+filesystem caching credential manager
+
+206
+00:08:41,169 --> 00:08:45,770
+that's fine and that's that's good ok we
+
+207
+00:08:45,770 --> 00:08:47,930
+don't want to use this experimental tool
+
+208
+00:08:47,930 --> 00:08:51,020
+so click install and it will install it
+
+209
+00:08:51,020 --> 00:08:53,740
+on your system
+
+210
+00:08:53,779 --> 00:08:56,430
+okay so once that's done we're going to
+
+211
+00:08:56,430 --> 00:08:59,130
+uncheck fully release notes and what's
+
+212
+00:08:59,130 --> 00:09:02,639
+to watch get - okay click finish and
+
+213
+00:09:02,639 --> 00:09:05,790
+then this is the git bash tool that they
+
+214
+00:09:05,790 --> 00:09:07,829
+give you so I would definitely suggest
+
+215
+00:09:07,829 --> 00:09:09,690
+using this over the standard Windows
+
+216
+00:09:09,690 --> 00:09:13,350
+command line so now if we say get - -
+
+217
+00:09:13,350 --> 00:09:16,649
+version you'll see the version you have
+
+218
+00:09:16,649 --> 00:09:19,259
+yours may be different and then you can
+
+219
+00:09:19,259 --> 00:09:21,509
+also use this from within the standard
+
+220
+00:09:21,509 --> 00:09:25,800
+coming in line so if we go CMD and we
+
+221
+00:09:25,800 --> 00:09:28,230
+open up the Windows command line and -
+
+222
+00:09:28,230 --> 00:09:31,980
+get - - version it should also work okay
+
+223
+00:09:31,980 --> 00:09:34,620
+so you can use git from either one now
+
+224
+00:09:34,620 --> 00:09:36,449
+what I'm going to do is create a project
+
+225
+00:09:36,449 --> 00:09:40,110
+so let's see on my desktop I'm going to
+
+226
+00:09:40,110 --> 00:09:43,319
+create a new folder and just going to
+
+227
+00:09:43,319 --> 00:09:46,440
+call this my app what we put in here
+
+228
+00:09:46,440 --> 00:09:49,829
+doesn't really matter so when you have
+
+229
+00:09:49,829 --> 00:09:51,750
+git bash you can also go ahead and
+
+230
+00:09:51,750 --> 00:09:54,420
+right-click and do git bash here and
+
+231
+00:09:54,420 --> 00:09:57,089
+that will open up a window there as well
+
+232
+00:09:57,089 --> 00:10:01,589
+all right so I'll just use this one and
+
+233
+00:10:01,589 --> 00:10:03,720
+you can hold ctrl and scroll and you can
+
+234
+00:10:03,720 --> 00:10:05,399
+make this bigger or smaller which is
+
+235
+00:10:05,399 --> 00:10:08,759
+nice okay so what we want to do first
+
+236
+00:10:08,759 --> 00:10:11,939
+let's open this up as well kind of have
+
+237
+00:10:11,939 --> 00:10:16,170
+both of these open at the same time okay
+
+238
+00:10:16,170 --> 00:10:17,699
+so what I want to do is just create a
+
+239
+00:10:17,699 --> 00:10:20,100
+couple files that that our project would
+
+240
+00:10:20,100 --> 00:10:25,399
+have so let's say touch index dot HTML
+
+241
+00:10:25,399 --> 00:10:28,199
+or you could use your file manager and
+
+242
+00:10:28,199 --> 00:10:33,509
+let's create an app dot jas okay so we
+
+243
+00:10:33,509 --> 00:10:35,490
+have these two files that this is our
+
+244
+00:10:35,490 --> 00:10:39,689
+application and what we want to do is
+
+245
+00:10:39,689 --> 00:10:43,079
+let's open up and open up atom which is
+
+246
+00:10:43,079 --> 00:10:47,670
+the text editor that I'm using okay and
+
+247
+00:10:47,670 --> 00:10:50,550
+we'll move this over here and I'm just
+
+248
+00:10:50,550 --> 00:10:56,540
+going to add that folder as a project
+
+249
+00:10:57,130 --> 00:11:02,260
+so desktop my app and let's close this
+
+250
+00:11:02,260 --> 00:11:05,970
+stuff up and let's just open up
+
+251
+00:11:05,970 --> 00:11:09,610
+index.html and we'll just put you know
+
+252
+00:11:09,610 --> 00:11:16,470
+standard HTML tags in here put a title
+
+253
+00:11:18,960 --> 00:11:29,760
+and body I'll just say this is my app
+
+254
+00:11:29,760 --> 00:11:32,980
+okay we'll save that and now what I want
+
+255
+00:11:32,980 --> 00:11:34,570
+to do is I want to initialize this
+
+256
+00:11:34,570 --> 00:11:37,180
+folder as a git repository so to do that
+
+257
+00:11:37,180 --> 00:11:39,940
+we just want to say get in it okay for
+
+258
+00:11:39,940 --> 00:11:43,660
+initialize now once we do that it's
+
+259
+00:11:43,660 --> 00:11:45,820
+going to create a dot git folder in your
+
+260
+00:11:45,820 --> 00:11:48,430
+thoughtful in your directory now we
+
+261
+00:11:48,430 --> 00:11:51,160
+can't see it here because I'm on a new
+
+262
+00:11:51,160 --> 00:11:53,650
+Windows installation and I don't have
+
+263
+00:11:53,650 --> 00:11:55,900
+hidden files enabled so what you want to
+
+264
+00:11:55,900 --> 00:11:58,150
+do is if you're not seeing it here is go
+
+265
+00:11:58,150 --> 00:12:02,530
+to view options and then change folder
+
+266
+00:12:02,530 --> 00:12:05,380
+search options go to view and then show
+
+267
+00:12:05,380 --> 00:12:07,900
+hidden files I'm also going to uncheck
+
+268
+00:12:07,900 --> 00:12:09,850
+hide extensions for known file types
+
+269
+00:12:09,850 --> 00:12:12,070
+because I want the extension to be shown
+
+270
+00:12:12,070 --> 00:12:15,550
+all the time so let's say apply okay and
+
+271
+00:12:15,550 --> 00:12:17,080
+now you'll see there's a dot git folder
+
+272
+00:12:17,080 --> 00:12:20,020
+now this stuff in here don't worry about
+
+273
+00:12:20,020 --> 00:12:23,260
+that at all that's just the gif files I
+
+274
+00:12:23,260 --> 00:12:24,580
+don't even know what half this stuff
+
+275
+00:12:24,580 --> 00:12:26,860
+means so we're not going to look into
+
+276
+00:12:26,860 --> 00:12:30,460
+that there's no reason to so now we have
+
+277
+00:12:30,460 --> 00:12:32,740
+this initialized as a git repository so
+
+278
+00:12:32,740 --> 00:12:36,760
+we can start to use git commands now one
+
+279
+00:12:36,760 --> 00:12:39,010
+thing you should do before you before
+
+280
+00:12:39,010 --> 00:12:41,350
+you start anything is you want to add
+
+281
+00:12:41,350 --> 00:12:43,750
+your name and email address to get so to
+
+282
+00:12:43,750 --> 00:12:46,780
+do that use the config command so get
+
+283
+00:12:46,780 --> 00:12:52,750
+config - - global and then we're going
+
+284
+00:12:52,750 --> 00:12:59,050
+to do user dot name user dot name and
+
+285
+00:12:59,050 --> 00:13:03,370
+then in quotes just put your name okay
+
+286
+00:13:03,370 --> 00:13:04,480
+and then we're going to do the same
+
+287
+00:13:04,480 --> 00:13:06,250
+thing for the email so we'll just change
+
+288
+00:13:06,250 --> 00:13:09,320
+name right here to email
+
+289
+00:13:09,320 --> 00:13:17,750
+and then just put in your email okay so
+
+290
+00:13:17,750 --> 00:13:19,759
+now that that's set up let's go ahead
+
+291
+00:13:19,759 --> 00:13:23,540
+and let's create our let's add the
+
+292
+00:13:23,540 --> 00:13:26,630
+index.html file to our git repository so
+
+293
+00:13:26,630 --> 00:13:29,630
+to do that we can say git add and then
+
+294
+00:13:29,630 --> 00:13:32,959
+index dot HTML all right so it doesn't
+
+295
+00:13:32,959 --> 00:13:35,389
+tell us anything when we do that but if
+
+296
+00:13:35,389 --> 00:13:37,339
+we want to check to see what's in the
+
+297
+00:13:37,339 --> 00:13:39,319
+staging area we can do git status
+
+298
+00:13:39,319 --> 00:13:41,089
+it's the command we're going to use
+
+299
+00:13:41,089 --> 00:13:43,310
+quite a bit and what this is telling us
+
+300
+00:13:43,310 --> 00:13:47,120
+is that the index file has changes to be
+
+301
+00:13:47,120 --> 00:13:49,430
+committed and that we've added it to the
+
+302
+00:13:49,430 --> 00:13:52,610
+staging area and then app J s is a file
+
+303
+00:13:52,610 --> 00:13:55,130
+that's untracked okay so it's telling us
+
+304
+00:13:55,130 --> 00:13:58,790
+to add it so if you want to remove for
+
+305
+00:13:58,790 --> 00:14:01,220
+instance index.html from the staging
+
+306
+00:14:01,220 --> 00:14:04,250
+area you can do get RM so let's go ahead
+
+307
+00:14:04,250 --> 00:14:09,560
+and do that so if we say get RM and we
+
+308
+00:14:09,560 --> 00:14:12,920
+want to add the - - cached
+
+309
+00:14:12,920 --> 00:14:19,399
+option and then index dot HTML okay and
+
+310
+00:14:19,399 --> 00:14:22,850
+now if we do get status you'll see that
+
+311
+00:14:22,850 --> 00:14:25,519
+both files are now on tracked now
+
+312
+00:14:25,519 --> 00:14:27,170
+there's different ways you can add files
+
+313
+00:14:27,170 --> 00:14:30,560
+for instance we could say get add and we
+
+314
+00:14:30,560 --> 00:14:33,170
+could use a star or asterisk and say dot
+
+315
+00:14:33,170 --> 00:14:35,779
+HTML and what that will do is it will
+
+316
+00:14:35,779 --> 00:14:39,199
+add any any HTML files to the staging
+
+317
+00:14:39,199 --> 00:14:42,980
+area so now if we say get status you'll
+
+318
+00:14:42,980 --> 00:14:45,019
+see that it added the index file it also
+
+319
+00:14:45,019 --> 00:14:47,149
+would have added any other HTML files
+
+320
+00:14:47,149 --> 00:14:50,269
+that we had alright so I'm going to go
+
+321
+00:14:50,269 --> 00:14:53,540
+ahead and take the index out again with
+
+322
+00:14:53,540 --> 00:14:56,689
+the RM command and then I'm going to
+
+323
+00:14:56,689 --> 00:14:59,449
+show you how to add everything ok so if
+
+324
+00:14:59,449 --> 00:15:01,490
+you want to add every file you can say
+
+325
+00:15:01,490 --> 00:15:05,540
+get get pad dot and now if we say get
+
+326
+00:15:05,540 --> 00:15:08,480
+status you'll see that both the index
+
+327
+00:15:08,480 --> 00:15:11,240
+and the app file are in the staging area
+
+328
+00:15:11,240 --> 00:15:14,779
+ok so we haven't committed them yet and
+
+329
+00:15:14,779 --> 00:15:16,279
+what I want to do is edit one of these
+
+330
+00:15:16,279 --> 00:15:18,680
+files so we'll go over to index.html and
+
+331
+00:15:18,680 --> 00:15:20,480
+I'm just going to put in an exclamation
+
+332
+00:15:20,480 --> 00:15:22,660
+here and then save
+
+333
+00:15:22,660 --> 00:15:25,380
+and then if we go and we say get status
+
+334
+00:15:25,380 --> 00:15:29,020
+you can see we now have this changes
+
+335
+00:15:29,020 --> 00:15:31,870
+notch Stage four commit index.html so
+
+336
+00:15:31,870 --> 00:15:34,090
+this means that we have changed we've
+
+337
+00:15:34,090 --> 00:15:35,770
+added some kind of change in the file
+
+338
+00:15:35,770 --> 00:15:38,320
+while it was in the staging area so it's
+
+339
+00:15:38,320 --> 00:15:41,230
+telling us to go ahead and add it so get
+
+340
+00:15:41,230 --> 00:15:45,400
+add all again and then get status and
+
+341
+00:15:45,400 --> 00:15:47,680
+now you can see that it's back in the
+
+342
+00:15:47,680 --> 00:15:49,960
+staging area all right so now we're
+
+343
+00:15:49,960 --> 00:15:52,810
+going to do a commit so for that we say
+
+344
+00:15:52,810 --> 00:15:55,780
+git commit now there's an option that I
+
+345
+00:15:55,780 --> 00:15:57,760
+would always suggest you use but I'm
+
+346
+00:15:57,760 --> 00:15:59,410
+going to show you without it first
+
+347
+00:15:59,410 --> 00:16:02,080
+so if we say git commit it's going to go
+
+348
+00:16:02,080 --> 00:16:04,240
+ahead and open up this vim editor which
+
+349
+00:16:04,240 --> 00:16:06,160
+can be a little confusing because if you
+
+350
+00:16:06,160 --> 00:16:07,840
+start to type it's not going to do
+
+351
+00:16:07,840 --> 00:16:10,320
+anything what you need to do is click I
+
+352
+00:16:10,320 --> 00:16:13,360
+to go into insert mode and now I can
+
+353
+00:16:13,360 --> 00:16:15,640
+type okay so I'm just going to say
+
+354
+00:16:15,640 --> 00:16:18,790
+initial commit actually I'll just go
+
+355
+00:16:18,790 --> 00:16:22,240
+uncomment it down here these some number
+
+356
+00:16:22,240 --> 00:16:24,580
+signs are basically comments okay so
+
+357
+00:16:24,580 --> 00:16:26,470
+anything that has the number sign in
+
+358
+00:16:26,470 --> 00:16:28,570
+front of it is treated as a comment
+
+359
+00:16:28,570 --> 00:16:30,040
+so I'll just going to remove it from
+
+360
+00:16:30,040 --> 00:16:32,740
+this initial commit and that gives us a
+
+361
+00:16:32,740 --> 00:16:35,080
+comment of initial commit okay now to
+
+362
+00:16:35,080 --> 00:16:37,150
+get out of this we want to do escape
+
+363
+00:16:37,150 --> 00:16:39,670
+which takes us out of insert mode and
+
+364
+00:16:39,670 --> 00:16:44,230
+then we want to type in : WQ and enter
+
+365
+00:16:44,230 --> 00:16:46,600
+and now you'll see that those files have
+
+366
+00:16:46,600 --> 00:16:48,730
+been committed and it tells us how many
+
+367
+00:16:48,730 --> 00:16:51,280
+files have changed and gives us the file
+
+368
+00:16:51,280 --> 00:16:54,100
+names okay so that's how you do a commit
+
+369
+00:16:54,100 --> 00:16:56,970
+so if we were now to say get status it
+
+370
+00:16:56,970 --> 00:16:59,440
+says nothing to commit because we've
+
+371
+00:16:59,440 --> 00:17:01,690
+already committed all of our changes if
+
+372
+00:17:01,690 --> 00:17:04,209
+we were to go edit a file now and do get
+
+373
+00:17:04,209 --> 00:17:07,000
+status it'll show us again which files
+
+374
+00:17:07,000 --> 00:17:09,069
+are in staging and which files are
+
+375
+00:17:09,069 --> 00:17:12,699
+unchanged all right so let's go ahead
+
+376
+00:17:12,699 --> 00:17:15,970
+and edit the app.js file I'm just going
+
+377
+00:17:15,970 --> 00:17:20,730
+to do console dot log and we'll just say
+
+378
+00:17:20,730 --> 00:17:26,410
+hello save it so now we do lots of slow
+
+379
+00:17:26,410 --> 00:17:29,289
+slow machine
+
+380
+00:17:29,289 --> 00:17:33,860
+get status so that's been modified app J
+
+381
+00:17:33,860 --> 00:17:36,289
+s now I'm going to go ahead and add it
+
+382
+00:17:36,289 --> 00:17:41,090
+with get add all alright now I want to
+
+383
+00:17:41,090 --> 00:17:42,710
+do a commit but I want to show you how
+
+384
+00:17:42,710 --> 00:17:45,679
+we can skip that whole edit stage so we
+
+385
+00:17:45,679 --> 00:17:49,640
+can say get commit and then add dash M
+
+386
+00:17:49,640 --> 00:17:53,120
+and then do a comment here so we'll say
+
+387
+00:17:53,120 --> 00:17:59,510
+changed changed fjs and enter okay so
+
+388
+00:17:59,510 --> 00:18:01,130
+now it's made that commit and it's
+
+389
+00:18:01,130 --> 00:18:03,200
+skipped that whole editing stage we just
+
+390
+00:18:03,200 --> 00:18:05,750
+included the comment within that command
+
+391
+00:18:05,750 --> 00:18:09,890
+okay using dash M all right so now what
+
+392
+00:18:09,890 --> 00:18:11,890
+I want to do when we clear this out I
+
+393
+00:18:11,890 --> 00:18:14,510
+want to show you how to use git ignore
+
+394
+00:18:14,510 --> 00:18:17,020
+so this is a file that we can include
+
+395
+00:18:17,020 --> 00:18:20,029
+the files or folders that we don't want
+
+396
+00:18:20,029 --> 00:18:22,820
+to include in our repository at all so
+
+397
+00:18:22,820 --> 00:18:25,580
+even if we do get add dot where it adds
+
+398
+00:18:25,580 --> 00:18:27,649
+everything it's not going to add that so
+
+399
+00:18:27,649 --> 00:18:28,399
+let's create it
+
+400
+00:18:28,399 --> 00:18:34,460
+we'll say touch dot to get ignore now if
+
+401
+00:18:34,460 --> 00:18:36,350
+you try to create this file in Windows
+
+402
+00:18:36,350 --> 00:18:38,299
+in the file manager you probably won't
+
+403
+00:18:38,299 --> 00:18:40,100
+be able to because it starts with a dot
+
+404
+00:18:40,100 --> 00:18:41,720
+so it's going to look at it as an empty
+
+405
+00:18:41,720 --> 00:18:44,840
+name so either do our touch touch
+
+406
+00:18:44,840 --> 00:18:47,270
+command or you can create it inside of
+
+407
+00:18:47,270 --> 00:18:50,360
+an editor I believe all right so what we
+
+408
+00:18:50,360 --> 00:18:52,960
+want to do is open up get ignore and
+
+409
+00:18:52,960 --> 00:18:55,850
+we're also going to create a file that
+
+410
+00:18:55,850 --> 00:19:01,480
+we wouldn't want to include so let's say
+
+411
+00:19:01,690 --> 00:19:06,440
+let's say touch and create a log dot
+
+412
+00:19:06,440 --> 00:19:08,570
+text usually you don't want to include
+
+413
+00:19:08,570 --> 00:19:12,020
+log files so let's add something to this
+
+414
+00:19:12,020 --> 00:19:18,799
+we'll just say there are logs and save
+
+415
+00:19:18,799 --> 00:19:21,500
+that and what's going to get ignore and
+
+416
+00:19:21,500 --> 00:19:25,700
+we'll say log dot txt and save that's
+
+417
+00:19:25,700 --> 00:19:27,429
+all you have to do is add the file name
+
+418
+00:19:27,429 --> 00:19:32,210
+now if we go over here and we say get
+
+419
+00:19:32,210 --> 00:19:39,860
+add all and then get status you can see
+
+420
+00:19:39,860 --> 00:19:41,720
+the only file that's in the staging
+
+421
+00:19:41,720 --> 00:19:44,330
+that's change does get ignored normally
+
+422
+00:19:44,330 --> 00:19:46,190
+log text would be there because we just
+
+423
+00:19:46,190 --> 00:19:48,320
+changed it but since we added it to get
+
+424
+00:19:48,320 --> 00:19:51,560
+ignore it's not going to get added okay
+
+425
+00:19:51,560 --> 00:19:54,380
+you can also add entire directories so
+
+426
+00:19:54,380 --> 00:20:01,790
+let's say we have will say der one man
+
+427
+00:20:01,790 --> 00:20:04,480
+this is slow
+
+428
+00:20:09,000 --> 00:20:17,610
+and let's do jar - and inside these I'm
+
+429
+00:20:17,610 --> 00:20:21,140
+just going to create let's say new file
+
+430
+00:20:21,140 --> 00:20:29,400
+and app 1jf let's see inside there -
+
+431
+00:20:29,400 --> 00:20:33,179
+we'll create a file called app 2jf and
+
+432
+00:20:33,179 --> 00:20:40,200
+we'll just add something to those okay
+
+433
+00:20:40,200 --> 00:20:45,929
+we just put that I'll copy it and we'll
+
+434
+00:20:45,929 --> 00:20:49,289
+also put that in app one okay so if we
+
+435
+00:20:49,289 --> 00:20:51,690
+go to get ignore and let's say that we
+
+436
+00:20:51,690 --> 00:20:54,630
+don't want dirt to included at all
+
+437
+00:20:54,630 --> 00:20:59,659
+so we could just put in slash dirt -
+
+438
+00:21:00,620 --> 00:21:05,250
+okay and save that and let's go over
+
+439
+00:21:05,250 --> 00:21:11,100
+here and go get add all and then get the
+
+440
+00:21:11,100 --> 00:21:15,990
+status and notice that only there one is
+
+441
+00:21:15,990 --> 00:21:17,970
+in there even though there are two has a
+
+442
+00:21:17,970 --> 00:21:19,980
+file that we change it's not in there
+
+443
+00:21:19,980 --> 00:21:21,840
+because we added the whole folder to get
+
+444
+00:21:21,840 --> 00:21:24,240
+ignore all right you could even add you
+
+445
+00:21:24,240 --> 00:21:27,799
+could say star dot txt and it'll it'll
+
+446
+00:21:27,799 --> 00:21:31,679
+withdraw all text files okay and there's
+
+447
+00:21:31,679 --> 00:21:33,360
+other expressions you can do as well I'm
+
+448
+00:21:33,360 --> 00:21:35,309
+not going to go through all of them it's
+
+449
+00:21:35,309 --> 00:21:37,440
+all in the documentation but just know
+
+450
+00:21:37,440 --> 00:21:39,299
+that if you don't want something
+
+451
+00:21:39,299 --> 00:21:41,460
+included you want to use git ignore or
+
+452
+00:21:41,460 --> 00:21:44,250
+dot get a car alright so let's close
+
+453
+00:21:44,250 --> 00:21:48,960
+these out and the last thing I want to
+
+454
+00:21:48,960 --> 00:21:51,270
+look at before we look into remote
+
+455
+00:21:51,270 --> 00:21:54,510
+repositories is branches all right so
+
+456
+00:21:54,510 --> 00:21:56,190
+let's say that you're a developer
+
+457
+00:21:56,190 --> 00:21:58,169
+working on a project with a bunch of
+
+458
+00:21:58,169 --> 00:22:01,110
+people and your assign the task of
+
+459
+00:22:01,110 --> 00:22:04,500
+adding a login okay so you don't want to
+
+460
+00:22:04,500 --> 00:22:08,370
+start making changes and you know push
+
+461
+00:22:08,370 --> 00:22:11,250
+to the repository and have the main code
+
+462
+00:22:11,250 --> 00:22:14,630
+based codebase edit edited and changed
+
+463
+00:22:14,630 --> 00:22:17,159
+without finishing the praat are the
+
+464
+00:22:17,159 --> 00:22:20,039
+functionality okay so what you would do
+
+465
+00:22:20,039 --> 00:22:22,020
+is you could create a branch call
+
+466
+00:22:22,020 --> 00:22:25,110
+login or whatever and then work in that
+
+467
+00:22:25,110 --> 00:22:27,300
+branch and you can still commit it and
+
+468
+00:22:27,300 --> 00:22:29,040
+all that but it's not going to be
+
+469
+00:22:29,040 --> 00:22:31,590
+committed to the main branch okay which
+
+470
+00:22:31,590 --> 00:22:33,210
+is called master you can see right here
+
+471
+00:22:33,210 --> 00:22:35,970
+when we say get status it tells us we're
+
+472
+00:22:35,970 --> 00:22:38,910
+on the master branch now to create a
+
+473
+00:22:38,910 --> 00:22:43,410
+branch we can say get branch and let's
+
+474
+00:22:43,410 --> 00:22:48,390
+just call this my branch I actually will
+
+475
+00:22:48,390 --> 00:22:50,850
+just call it login all right we'll
+
+476
+00:22:50,850 --> 00:22:52,950
+pretend we're adding some login
+
+477
+00:22:52,950 --> 00:22:56,160
+functionality all right now just doing
+
+478
+00:22:56,160 --> 00:22:58,890
+that doesn't change us to the branch if
+
+479
+00:22:58,890 --> 00:23:02,340
+I say get status it still tells us that
+
+480
+00:23:02,340 --> 00:23:05,880
+I didn't commit these changes so let me
+
+481
+00:23:05,880 --> 00:23:08,070
+just commit these before we go ahead and
+
+482
+00:23:08,070 --> 00:23:10,350
+switch branches so we'll say git commit
+
+483
+00:23:10,350 --> 00:23:17,270
+dash M and I'll just say another change
+
+484
+00:23:19,070 --> 00:23:23,430
+okay so you'll see that got committed to
+
+485
+00:23:23,430 --> 00:23:25,920
+master because we're not in that Brett
+
+486
+00:23:25,920 --> 00:23:28,230
+de log in branch so to switch we can say
+
+487
+00:23:28,230 --> 00:23:32,880
+git checkout and then the name of the
+
+488
+00:23:32,880 --> 00:23:35,730
+branch okay so now we're in the log in
+
+489
+00:23:35,730 --> 00:23:37,740
+branch so I'm going to clear that out
+
+490
+00:23:37,740 --> 00:23:40,890
+and then I'm going to say get a not get
+
+491
+00:23:40,890 --> 00:23:42,330
+let's go ahead and create a new file
+
+492
+00:23:42,330 --> 00:23:45,090
+while we're in this branch called log in
+
+493
+00:23:45,090 --> 00:23:49,230
+dot html' okay so over here let's going
+
+494
+00:23:49,230 --> 00:23:51,240
+to log in and we'll just say whatever
+
+495
+00:23:51,240 --> 00:23:55,920
+doesn't matter log in and save and it's
+
+496
+00:23:55,920 --> 00:23:58,560
+also edit index.html so I'm just going
+
+497
+00:23:58,560 --> 00:24:00,840
+to add down here I'm just going to say
+
+498
+00:24:00,840 --> 00:24:05,130
+log in form and save okay and then let's
+
+499
+00:24:05,130 --> 00:24:10,100
+say get add all and then let's commit it
+
+500
+00:24:10,100 --> 00:24:16,820
+commit - M and we'll say log in form
+
+501
+00:24:16,820 --> 00:24:21,420
+okay so now let's go ahead and switch
+
+502
+00:24:21,420 --> 00:24:25,410
+back now when I do the switch watch the
+
+503
+00:24:25,410 --> 00:24:32,510
+log in HTML so get checkout master and
+
+504
+00:24:32,510 --> 00:24:35,850
+now the log in HTML file is
+
+505
+00:24:35,850 --> 00:24:38,520
+gone and if we look at index.html that
+
+506
+00:24:38,520 --> 00:24:41,220
+part of it that we edited is also gone
+
+507
+00:24:41,220 --> 00:24:44,130
+so the reason for that is because that
+
+508
+00:24:44,130 --> 00:24:46,500
+is that's in the login branch now if we
+
+509
+00:24:46,500 --> 00:24:48,360
+want to merge that if we finish the
+
+510
+00:24:48,360 --> 00:24:49,919
+functionality and we're ready to merge
+
+511
+00:24:49,919 --> 00:24:53,700
+then we can say while we're in the
+
+512
+00:24:53,700 --> 00:24:58,190
+master get merge
+
+513
+00:24:58,190 --> 00:25:04,710
+git merge login all right so it's going
+
+514
+00:25:04,710 --> 00:25:09,140
+to open this editor up so let's do I and
+
+515
+00:25:09,140 --> 00:25:11,480
+let's see please enter a commit message
+
+516
+00:25:11,480 --> 00:25:14,789
+to explain why this merge is necessary
+
+517
+00:25:14,789 --> 00:25:21,000
+so we'll say added login and then we'll
+
+518
+00:25:21,000 --> 00:25:27,210
+do escape : WQ enter okay so now even
+
+519
+00:25:27,210 --> 00:25:28,799
+though we're in the master branch we can
+
+520
+00:25:28,799 --> 00:25:33,750
+now see the log in HTML okay now there's
+
+521
+00:25:33,750 --> 00:25:35,970
+a lot more to branching and merging if
+
+522
+00:25:35,970 --> 00:25:38,250
+you want to get more complicated but
+
+523
+00:25:38,250 --> 00:25:39,960
+this I want to keep this simple
+
+524
+00:25:39,960 --> 00:25:42,929
+for beginners this is a good chance if
+
+525
+00:25:42,929 --> 00:25:44,789
+you're working on your own projects that
+
+526
+00:25:44,789 --> 00:25:47,789
+you won't even use branches alright so
+
+527
+00:25:47,789 --> 00:25:49,679
+let's go ahead and now work with a
+
+528
+00:25:49,679 --> 00:25:51,740
+remote repository so I'm going to go to
+
+529
+00:25:51,740 --> 00:25:58,710
+github alright so I'm going to go ahead
+
+530
+00:25:58,710 --> 00:26:00,090
+and just sign in if you don't have an
+
+531
+00:26:00,090 --> 00:26:01,559
+account just create one
+
+532
+00:26:01,559 --> 00:26:13,380
+it's obviously free okay so what we want
+
+533
+00:26:13,380 --> 00:26:17,039
+to do is go up to create new new
+
+534
+00:26:17,039 --> 00:26:19,559
+repository and I'm just going to call
+
+535
+00:26:19,559 --> 00:26:22,110
+this my Apps example you can call it
+
+536
+00:26:22,110 --> 00:26:24,690
+whatever you like put a description say
+
+537
+00:26:24,690 --> 00:26:30,030
+sample app for tutorial okay so you have
+
+538
+00:26:30,030 --> 00:26:31,980
+the option of public or private
+
+539
+00:26:31,980 --> 00:26:34,530
+so public anyone can see it you can
+
+540
+00:26:34,530 --> 00:26:36,900
+choose who can commit private you can
+
+541
+00:26:36,900 --> 00:26:39,179
+choose who sees it and commits and I
+
+542
+00:26:39,179 --> 00:26:41,429
+believe private cost money I'm not sure
+
+543
+00:26:41,429 --> 00:26:42,750
+I've never actually tried to create a
+
+544
+00:26:42,750 --> 00:26:47,760
+private repository on my account and you
+
+545
+00:26:47,760 --> 00:26:50,160
+can also choose to initialize it with a
+
+546
+00:26:50,160 --> 00:26:52,050
+me file if you want I'm just going to
+
+547
+00:26:52,050 --> 00:26:54,600
+leave that unchecked you can also choose
+
+548
+00:26:54,600 --> 00:26:56,100
+to add a get ignore which we already
+
+549
+00:26:56,100 --> 00:26:58,260
+have or a license so let's go ahead and
+
+550
+00:26:58,260 --> 00:27:01,440
+Creek clicks create repository alright
+
+551
+00:27:01,440 --> 00:27:02,970
+and then it will take you to that page
+
+552
+00:27:02,970 --> 00:27:05,220
+which has nothing in it so it's just
+
+553
+00:27:05,220 --> 00:27:07,530
+giving us this message here and it tells
+
+554
+00:27:07,530 --> 00:27:10,680
+you exactly what to do okay so you want
+
+555
+00:27:10,680 --> 00:27:12,480
+to initialize your directory which we've
+
+556
+00:27:12,480 --> 00:27:14,370
+already done it's telling us to add a
+
+557
+00:27:14,370 --> 00:27:18,060
+readme but you don't have to but you
+
+558
+00:27:18,060 --> 00:27:19,710
+probably should especially if it's a
+
+559
+00:27:19,710 --> 00:27:21,360
+public repository because you want to
+
+560
+00:27:21,360 --> 00:27:23,400
+add some information on your application
+
+561
+00:27:23,400 --> 00:27:27,060
+and you want to use dot MD two for it to
+
+562
+00:27:27,060 --> 00:27:30,660
+be able to display nicely on on the page
+
+563
+00:27:30,660 --> 00:27:34,980
+K and MD is marked down now telling us
+
+564
+00:27:34,980 --> 00:27:36,330
+how to make a commit but we don't
+
+565
+00:27:36,330 --> 00:27:37,950
+actually have to do this stuff what we
+
+566
+00:27:37,950 --> 00:27:41,370
+want to do is add this repository as a
+
+567
+00:27:41,370 --> 00:27:44,220
+remote repository if we go over now we
+
+568
+00:27:44,220 --> 00:27:47,820
+say get remote that will list the remote
+
+569
+00:27:47,820 --> 00:27:49,980
+repositories which we have none so let's
+
+570
+00:27:49,980 --> 00:27:54,180
+go and copy this and we'll paste that in
+
+571
+00:27:54,180 --> 00:27:57,170
+here run it and then let's say get
+
+572
+00:27:57,170 --> 00:28:05,490
+remote and it'll say Origin so down here
+
+573
+00:28:05,490 --> 00:28:08,610
+what we want to do is get push and then
+
+574
+00:28:08,610 --> 00:28:10,710
+- you origin/master
+
+575
+00:28:10,710 --> 00:28:13,020
+so let's go ahead and do that just copy
+
+576
+00:28:13,020 --> 00:28:18,170
+this okay and we'll paste that in and
+
+577
+00:28:18,170 --> 00:28:24,320
+that should push it to that repository
+
+578
+00:28:25,590 --> 00:28:29,880
+oh yeah okay so we do have to login to
+
+579
+00:28:29,880 --> 00:28:30,660
+github
+
+580
+00:28:30,660 --> 00:28:36,170
+it has to validate your credentials
+
+581
+00:28:38,240 --> 00:28:50,700
+gender sitcom and password okay so now
+
+582
+00:28:50,700 --> 00:28:52,410
+it's going it's going to push to the
+
+583
+00:28:52,410 --> 00:28:54,510
+repository to the master branch and
+
+584
+00:28:54,510 --> 00:28:57,990
+let's reload this and I'll see we have
+
+585
+00:28:57,990 --> 00:29:01,200
+our files here all right and then down
+
+586
+00:29:01,200 --> 00:29:03,060
+here it says help people interested in
+
+587
+00:29:03,060 --> 00:29:05,730
+this repository understand your project
+
+588
+00:29:05,730 --> 00:29:07,440
+by creating a readme so let's go ahead
+
+589
+00:29:07,440 --> 00:29:13,070
+and do that we'll say touch readme dot
+
+590
+00:29:13,070 --> 00:29:19,590
+MD alright and we can open that up which
+
+591
+00:29:19,590 --> 00:29:22,140
+I click the wrong editor it's going to
+
+592
+00:29:22,140 --> 00:29:26,340
+open up vs code okay so let's open up
+
+593
+00:29:26,340 --> 00:29:29,460
+the readme and I'm not going to go
+
+594
+00:29:29,460 --> 00:29:32,040
+through the syntax of markdown it's
+
+595
+00:29:32,040 --> 00:29:33,540
+pretty easy if you want to just look at
+
+596
+00:29:33,540 --> 00:29:35,640
+the documentation but we're going to put
+
+597
+00:29:35,640 --> 00:29:38,460
+a heading by using a number sign here
+
+598
+00:29:38,460 --> 00:29:45,150
+and we'll just say my app this is my app
+
+599
+00:29:45,150 --> 00:29:49,620
+and we'll save it let's go ahead and add
+
+600
+00:29:49,620 --> 00:29:55,380
+it and then we'll commit say commit and
+
+601
+00:29:55,380 --> 00:29:58,860
+we want to add - M comment will say
+
+602
+00:29:58,860 --> 00:30:01,910
+added readme
+
+603
+00:30:01,910 --> 00:30:04,290
+okay so right now it's on our local
+
+604
+00:30:04,290 --> 00:30:06,480
+repository we haven't actually pushed it
+
+605
+00:30:06,480 --> 00:30:08,580
+yet if I reload you'll see it's not
+
+606
+00:30:08,580 --> 00:30:11,460
+there so now that we've added that as a
+
+607
+00:30:11,460 --> 00:30:13,770
+remote repository all we have to do is
+
+608
+00:30:13,770 --> 00:30:17,100
+today get push and it'll push it right
+
+609
+00:30:17,100 --> 00:30:21,780
+to github okay so now if I reload you'll
+
+610
+00:30:21,780 --> 00:30:23,670
+see we have the readme file and it's
+
+611
+00:30:23,670 --> 00:30:27,660
+actually displayed here now if someone
+
+612
+00:30:27,660 --> 00:30:30,240
+wanted to get this they could just clone
+
+613
+00:30:30,240 --> 00:30:32,460
+it okay if we go to clone or download
+
+614
+00:30:32,460 --> 00:30:34,890
+right here they could choose to download
+
+615
+00:30:34,890 --> 00:30:37,710
+it as a zip or they could clone it using
+
+616
+00:30:37,710 --> 00:30:38,179
+this
+
+617
+00:30:38,179 --> 00:30:40,580
+going to go ahead and copy that link and
+
+618
+00:30:40,580 --> 00:30:44,419
+then let's let's create another folder
+
+619
+00:30:44,419 --> 00:30:51,619
+and I'll just call it my app - and let's
+
+620
+00:30:51,619 --> 00:30:59,149
+open up get - here and then what we want
+
+621
+00:30:59,149 --> 00:31:05,899
+to do is say git clone and we'll just
+
+622
+00:31:05,899 --> 00:31:10,460
+paste that link in and it's going to
+
+623
+00:31:10,460 --> 00:31:15,379
+pull everything in now I actually okay
+
+624
+00:31:15,379 --> 00:31:16,759
+so what it does is it actually creates
+
+625
+00:31:16,759 --> 00:31:20,809
+the the folder for you my app sample so
+
+626
+00:31:20,809 --> 00:31:23,149
+it pulls the entire folder in but if we
+
+627
+00:31:23,149 --> 00:31:25,100
+open that up you can see we have the
+
+628
+00:31:25,100 --> 00:31:27,559
+entire application here okay and you can
+
+629
+00:31:27,559 --> 00:31:30,649
+clone anybody's anybody's project as
+
+630
+00:31:30,649 --> 00:31:33,470
+long as it's public now if you had
+
+631
+00:31:33,470 --> 00:31:35,539
+multiple developers working on it and
+
+632
+00:31:35,539 --> 00:31:38,779
+someone else made a change and we want
+
+633
+00:31:38,779 --> 00:31:40,159
+to go over here back to our original
+
+634
+00:31:40,159 --> 00:31:44,720
+folder you could just do get pull and
+
+635
+00:31:44,720 --> 00:31:46,490
+that would pull everything down you can
+
+636
+00:31:46,490 --> 00:31:48,950
+see everything is up to date okay I
+
+637
+00:31:48,950 --> 00:31:51,049
+think that's as far as I want to go into
+
+638
+00:31:51,049 --> 00:31:53,269
+this so we covered all the basics all
+
+639
+00:31:53,269 --> 00:31:54,889
+the basic commands you need to start
+
+640
+00:31:54,889 --> 00:31:58,039
+using git I would suggest if you're not
+
+641
+00:31:58,039 --> 00:32:01,580
+using it at least now start to create
+
+642
+00:32:01,580 --> 00:32:03,549
+your repositories for your project
+
+643
+00:32:03,549 --> 00:32:05,840
+create a github account if you don't
+
+644
+00:32:05,840 --> 00:32:08,629
+have one create the repositories on
+
+645
+00:32:08,629 --> 00:32:11,389
+github and then push from your local
+
+646
+00:32:11,389 --> 00:32:14,679
+machine - to the github repository
+
+647
+00:32:14,679 --> 00:32:16,700
+alright and you don't even have to use
+
+648
+00:32:16,700 --> 00:32:18,320
+branches and stuff you know you're just
+
+649
+00:32:18,320 --> 00:32:20,600
+starting out just getting used to it all
+
+650
+00:32:20,600 --> 00:32:22,399
+you really need to do is add in commits
+
+651
+00:32:22,399 --> 00:32:25,820
+and push okay so hopefully this just
+
+652
+00:32:25,820 --> 00:32:28,669
+helped some of you guys I'm sure some of
+
+653
+00:32:28,669 --> 00:32:31,450
+you already know all this stuff and
+
+654
+00:32:31,450 --> 00:32:34,429
+hopefully you just used it as a
+
+655
+00:32:34,429 --> 00:32:36,830
+refresher or whatever alright so that's
+
+656
+00:32:36,830 --> 00:32:38,659
+it if you enjoyed it please subscribe
+
+657
+00:32:38,659 --> 00:32:40,820
+leave like leave a comment and I'll see
+
+658
+00:32:40,820 --> 00:32:43,509
+you next time
+
